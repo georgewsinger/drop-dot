@@ -6,11 +6,11 @@
 (node/enable-util-print!)
 
 (defn -main [& args]
-  #_(let [minimist (node/require "minimist")
+  (let [minimist (node/require "minimist")
           argv     (minimist (clj->js (vec args)))
           e        (or (.-e argv) "e option")
-          arg      (or (aget (aget argv "_") 0) "$HOME")])
+          arg      (or (aget (aget argv "_") 0) "$HOME")]
 
-    (println "template"));
+    (println argv)))
 
 (set! *main-cli-fn* -main)

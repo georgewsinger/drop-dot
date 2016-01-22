@@ -1,4 +1,5 @@
 - Get `lein test` and/or `lein cljsbuild test` working
+- Parinfer should show up on status bar.
 
 <!-- blog stuff -->
 
