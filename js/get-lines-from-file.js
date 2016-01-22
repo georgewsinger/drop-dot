@@ -27,30 +27,17 @@ var getFileLineCount = function(path, callback) {
 }
 
 
-var testPath = '/home/george/Dropbox/drop-dot/js/file.in';
-var testCallback = function(error, res) { console.log(res); }
-
-getFileLineCount(testPath, testCallback);
-
-
-arr = [];
-var testCallback1 = function(res) { arr.push(res); }
+/*
+ *  //Test Data: 
+ *
+ *  var testPath = '/home/george/Dropbox/drop-dot/js/file.in';
+ *  var testCallback = function(error, res) { console.log(res); }
+ *  getFileLineCount(testPath, testCallback);
+ *  arr = [];
+ *  var testCallback1 = function(res) { arr.push(res); }
+*/
 
 getLinesFromFile(testPath, testCallback1);
 
 module.exports.getFileLineCount = getFileLineCount;
 module.exports.getLinesFromFile = getLinesFromFile;
-
-(defn chan-config-files []
-  (go 
-   (let [res         (node/require "../js/get-lines-from-file")
-         config-path     "/home/george/Dropbox/drop-dot/js/file.in" 
-         wcc             (chan 1)
-         wc              (.getFileLineCount config-path #(>! wcc %))
-         c               (chan wc)
-         channel-jammer  #(>! c %)] ; triaged question: is this redundant?
-    (.getLinesFromFile 
-     res 
-     config-path
-     #(>! c %)) 
-    c )))
