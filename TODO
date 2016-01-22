@@ -1,3 +1,8 @@
+- Get `lein test` and/or `lein cljsbuild test` working
+
+<!-- blog stuff -->
+
+
 # 1 Project Dropbox History
 
 ## 1.1 What I did.
