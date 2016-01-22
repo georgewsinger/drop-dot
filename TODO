@@ -1,0 +1,56 @@
+# 1 Project Dropbox History
+
+## 1.1 What I did.
+
+1. [ ] Moved entire life to Dropbox folder. 
+2. [ ] Used scripts to help symlink {~/.config_files} to Dropbox folder.
+3. [ ] Old programs: Wrote list of existing programs and cross-installed. //ATTEMPTED to bash-script automate this but failed
+4. [ ] New programs: Use SSH scripts to cross-install new pacman/yaourt programs.
+
+## 1.2 Software Written
+
+1. `delink_local_home.sh` //contains single function which replaces {~/.symlinks} with {~/.actual_addresses}.
+2. `project_dropbox_functions.sh` //OLD and none of these were used
+3. **Soft linking function.**
+
+  ```
+  function fmvlns() {
+    mkdir -p $(dirname $2)
+    sudo mv $1 $2
+    sudo ln -s $2 $1
+  }
+  ```
+
+## 1.3 What is Needed
+
+
+
+# 1.4 Lessons Learned
+
+- Dropbox uploading takes a LONG time.
+- Most of my scripts I didn't use because I didn't trust them.
+
+# 2 Unprocessed
+
+- "drop-dot" //"How to Sync Your Unix Configuration Files and Plugins with Dropbox" //put a drop logo on it
+
+
+
+
+
+First, choose where you want your configuration files to go:
+
+//dir and file paths
+`dot-drop drop ~/.config $OPTIONAL_LOCATION` //~/.config -> $D/$HOME/.config
+`dot-drop link ~/.config $OPTIONAL_LOCATION` 
+
+//file directories (supposing `~/.drop-droprc is populated with list`
+`dot-drop drop`
+`dot-drop link`
+
+
+
+
+
+
+
