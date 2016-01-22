@@ -319,3 +319,6 @@ as
 (quit)
 (type 5)
 (load-file "repl.clj")
+(quit)
+(load-file "../repl.clj")
+(load-file "repl.clj")

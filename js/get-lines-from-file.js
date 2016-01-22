@@ -35,9 +35,9 @@ var getFileLineCount = function(path, callback) {
  *  getFileLineCount(testPath, testCallback);
  *  arr = [];
  *  var testCallback1 = function(res) { arr.push(res); }
+ *  getLinesFromFile(testPath, testCallback1);
 */
 
-getLinesFromFile(testPath, testCallback1);
 
 module.exports.getFileLineCount = getFileLineCount;
 module.exports.getLinesFromFile = getLinesFromFile;
