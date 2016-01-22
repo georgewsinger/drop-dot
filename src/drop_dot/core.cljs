@@ -11,6 +11,14 @@
           e        (or (.-e argv) "e option")
           arg      (or (aget (aget argv "_") 0) "$HOME")]
 
-    (println argv)))
+  (println argv)
+
+  (if (= arg "drop")
+    (println "drop mode"))
+
+  (if (= arg "link")
+    (println "link mode"))
+
+    ))
 
 (set! *main-cli-fn* -main)
