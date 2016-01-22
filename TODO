@@ -1,4 +1,4 @@
-- Get `lein test` and/or `lein cljsbuild test` working
+- Get `lein test` and/or `lein cljsbuild test` working //use lein bensu/doo
 - Parinfer should show up on status bar.
 
 <!-- blog stuff -->
