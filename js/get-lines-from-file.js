@@ -26,6 +26,25 @@ var getFileLineCount = function(path, callback) {
   exec("wc -l < " + path, callback);
 }
 
+var confirmPathExists = function(path, callback) {
+  var confirmPathExistsCallback = function(err, stat) {
+        if(err == null) {
+            callback(true);
+            //console.log('File exists');
+        } else if(err.code == 'ENOENT') {
+            callback(false);
+            //console.log('Some error: ', err.code);
+            //fs.writeFile('log.txt', 'Some log\n');
+        } else {
+            //console.log('Some other error: ', err.code);
+        }
+  }
+  var fs = require("fs");
+  fs.stat(path, confirmPathExistsCallback);
+}
+
+confirmPathExists('file.in', function(res) { console.log(res); });
+
 
 /*
  *  //Test Data: 

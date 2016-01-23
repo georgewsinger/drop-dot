@@ -5,16 +5,10 @@
 
 (node/enable-util-print!)
 
-(defn t1 []
-  (let [c (chan 1)]
-    (go (>! c 5)) c))
-   
-
-(go (println (<! t1)))
-  
+(defn path-exists? [path])
 
 
-(defn chan-config-files []
+(defn chan-config-paths []
   (let [c (chan)]
    (go (let [res         (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js") ; "../js/get-liens-from-file.js" fails in repl
          config-path     "/home/george/Dropbox/drop-dot/js/file.in" 
@@ -29,13 +23,6 @@
        res 
        config-path
        (fn [res] (go (>! c res) (close-if-done)))))) c))
-
-(type (chan-config-files))
-
-(def hey (chan-config-files))
-(go (println (<! hey)))
-(go (println (<! (chan-config-files))))
-;(println (go (<! chan-config-files)))
 
 (defn -main [& args]
   (let [minimist (node/require "minimist")
