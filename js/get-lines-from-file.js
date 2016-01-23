@@ -43,6 +43,7 @@ var confirmPathExists = function(path, callback) {
   fs.stat(path, confirmPathExistsCallback);
 }
 
+// (.confirmPathExists res path (fn [] (go (>! d))))
 confirmPathExists('file.in', function(res) { console.log(res); });
 
 

@@ -5,6 +5,24 @@
 
 (node/enable-util-print!)
 
+; test data
+#_((defn drop-line [line] (println "line: " line))
+   (defn link-line [line] (println "line: " line)))
+
+(defn chan-config->exec-drop-dot [chan-config cmd]
+  (go-loop [chan-config chan-config]
+    (let [line (<! chan-config)]
+      (when line
+          (if (= cmd "drop") (drop-line line))
+          (if (= cmd "link") (link-line line))
+          (recur chan-config))
+        (println "done"))))
+
+; test data
+#_((def cc (chan 2))
+   (go (>! cc "1") (>! cc "2") (close! cc))
+   (chan-config->exec-drop-dot cc "drop"))
+
 (defn path-exists? [path])
 
 
