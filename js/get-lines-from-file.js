@@ -41,6 +41,7 @@ var confirmPathExists = function(path, callback) {
   fs.stat(path, confirmPathExistsCallback);
 }
 
+/*
 var confirmPathNotSymLinked = function(path) {
 
   var path = expandHomeDir(path);
@@ -52,8 +53,9 @@ var confirmPathNotSymLinked = function(path) {
 
   fs.readlink(path, function(err, linkString) { console.log(linkString) });
 }
+*/
 
-confirmPathNotSymLinked("$HOME/.vimrc");
+//confirmPathNotSymLinked("~/.vimrc");
 
 module.exports.getFileLineCount = getFileLineCount;
 module.exports.getLinesFromFile = getLinesFromFile;

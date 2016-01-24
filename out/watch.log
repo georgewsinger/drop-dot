@@ -1,33 +1,5 @@
 Building ...
 Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
 Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
-... done. Elapsed 0.031095541 seconds
+... done. Elapsed 0.03971095 seconds
 Watching paths: /home/george/Dropbox/drop-dot/src
-Change detected, recompiling ...
-Compiling src/drop_dot/core.cljs
-WARNING: Use of undeclared Var drop-dot.core/drop-a-chan-verified-droppee at line 30 src/drop_dot/core.cljs
-WARNING: Wrong number of args (1) passed to drop-dot.core/chan-verified-path->chan-verified-droppee at line 29 src/drop_dot/core.cljs
-WARNING: Use of undeclared Var drop-dot.core/link-a-chan-verified-linkee at line 37 src/drop_dot/core.cljs
-WARNING: Use of undeclared Var drop-dot.core/line->chan-verified-linkee at line 36 src/drop_dot/core.cljs
-Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
-Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
-Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
-... done. Elapsed 0.134053859 seconds
-Change detected, recompiling ...
-Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
-Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
-... done. Elapsed 0.029035961 seconds
-Change detected, recompiling ...
-Compiling src/drop_dot/core.cljs
-WARNING: Use of undeclared Var drop-dot.core/drop-a-chan-verified-droppee at line 31 src/drop_dot/core.cljs
-WARNING: Wrong number of args (1) passed to drop-dot.core/chan-verified-path->chan-verified-droppee at line 30 src/drop_dot/core.cljs
-WARNING: Use of undeclared Var drop-dot.core/link-a-chan-verified-linkee at line 38 src/drop_dot/core.cljs
-WARNING: Use of undeclared Var drop-dot.core/line->chan-verified-linkee at line 37 src/drop_dot/core.cljs
-Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
-Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
-Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
-... done. Elapsed 0.14214497 seconds
-Change detected, recompiling ...
-Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
-Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
-... done. Elapsed 0.038169821 seconds

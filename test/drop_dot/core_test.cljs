@@ -1,15 +1,24 @@
 (ns drop-dot.core-test
   (:require [drop-dot.core :as core]
-						[cljs.test :refer-macros [deftest is testing run-tests]]
+						[cljs.test :refer-macros [deftest is testing run-tests async]]
             [cljs.nodejs :as node]
             [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]])
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
 (go (def ha (<! (core/chan-path-exists? "/home/george/Dropbox"))))
 
+(deftest async-test
+  (testing "Testing some core.async functionality."
+    (async done
+      (go
+        (is (= (<! (go "val1")) "val1"))
+        (done)))))
+
 (deftest core-tests
+  (async done
    (testing "Testing core-tests."
-    (go (is (= (<! (core/chan-path-exists? "/home/george/Dropbox")) true)))))
+    (go (is (= (<! (core/chan-path-exists? "/home/george/Dropbox")) true))
+      (done)))))
 
 (run-tests 'drop-dot.core-test)
 
