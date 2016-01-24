@@ -1,37 +1,23 @@
-(ns drop-dot.core
-  (:require [cljs.nodejs :as node]
+(ns drop-dot.core (:require [cljs.nodejs :as node]
             [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]])
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
 (node/enable-util-print!)
 
-;QWERTY
+; TODO
+#_(defn dropbox-folder-exists?)
+#_(defn unix-system?)
+
 (defn chan-path-exists? [line]
   (let [res (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js")
-        d   (chan)
-       ]
-    (.confirmPathExists res line (fn [res] (go (>! d res)))) d)
-)
-
-; test data
-#_(go (println (<!(chan-path-exists? "/home/george/Dropboz")))) ; should print false
+        d   (chan)]
+    (.confirmPathExists res line (fn [res] (go (>! d res)))) d))
 
 (defn line->chan-verified-path [line]
   (go 
    (if (chan-path-exists? line) 
      line 
      (str "ERROR: Config " line " does not exist."))))
-
-; test data
-(do
-  (def c-test (chan))
-  (def c-test (line->chan-verified-path "line"))
-  (go (println (<! c-test))))
-
-
-; TODO
-(defn dropbox-folder-exists?)
-(defn unix-system?)
 
 ;Pass "ERROR: ..." when necessary through these channels
 (defn drop-line [line]
@@ -56,7 +42,6 @@
           (if (= cmd "link") (link-line line))
           (recur chan-config))
         (println "done"))))
-
 
 (defn chan-config-paths []
   (let [c (chan)]

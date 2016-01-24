@@ -5,12 +5,21 @@
             [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]])
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
-(deftest basic
-  (testing "Testing basic CLJS tests."
-   (is (= 5 5))))
+#_(deftest basic
+   (testing "Testing basic CLJS tests."
+    (is (= 5 5))))
+
+
+
+(deftest core-tests
+    (go (is 
+           (<! (core/chan-path-exists? "/home/george/Dropbox"))
+           true)))
+(run-tests 'drop-dot.core-test)
+
+#_(defn chan-path-exists? [line]
 
 ;(go (is = "first line" (<! (core/chan-config-files))))
-
 #_((defn drop-line [line] (println "line: " line))
    (defn link-line [line] (println "line: " line)))
 
@@ -18,6 +27,3 @@
    (go (>! cc "1") (>! cc "2") (close! cc))
    (core/chan-config->exec-drop-dot cc "drop"))
         
-(run-tests 'drop-dot.core-test)
-
-

@@ -1,0 +1,21 @@
+---
+decision: "Test or build?"
+hypothesis:  "Timed cleanup + test." # 10 minutes
+probability: 
+exposure: 
+expiration: 
+outcome: 
+brier_score: 
+date: "2016-01-24"
+
+posteriors:
+        H_1: 
+
+knowns:
+  k_1: "3am -> 1pm severe energy drop (11 hours)"
+
+unknowns: 
+        u_1: 
+
+notes: 
+...
