@@ -58,6 +58,8 @@ var confirmPathNotSymLinked = function(path) {
 //confirmPathNotSymLinked("~/.vimrc");
 
 function pointsWithin(path, dir, cb) {
+  var path = expandHomeDir(path);
+  var dir = expandHomeDir(dir);
   fs.lstat(path, function(err, stats) {
     if (err) return cb("ERROR: " + err);
     if (! stats.isSymbolicLink()) return cb("ERROR: " + path + " not a symlink.");
@@ -67,9 +69,14 @@ function pointsWithin(path, dir, cb) {
     });
   });
 };
-var vimPath = expandHomeDir("~/.vimrc");
-
-pointsWithin(vimPath, "/home/george/Dropbox", function(msg) { console.log(msg); } );
+function pointsWithinDropboxDropDot(path, cb) {
+  pointsWithin(path, "~/Dropbox/.dot-drop", cb);
+  console.log("hi");
+}
+//var vimPath = expandHomeDir("~/.test");
+//var targetPath = expandHomeDir("~/Dropbox/.dot-drop");
+//pointsWithin(vimPath, targetPath, function(msg) { console.log(msg); } );
+pointsWithinDropboxDropDot("~/.test1", function(msg) { console.log(msg); } );
 
 module.exports.getFileLineCount = getFileLineCount;
 module.exports.getLinesFromFile = getLinesFromFile;
