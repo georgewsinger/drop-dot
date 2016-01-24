@@ -57,6 +57,20 @@ var confirmPathNotSymLinked = function(path) {
 
 //confirmPathNotSymLinked("~/.vimrc");
 
+function pointsWithin(path, dir, cb) {
+  fs.lstat(path, function(err, stats) {
+    if (err) return cb("ERROR: " + err);
+    if (! stats.isSymbolicLink()) return cb("ERROR: " + path + " not a symlink.");
+    fs.readlink(path, function(err, dest) {
+      if (err) return cb("ERROR" + err);
+      return cb(dest.indexOf(dir) === 0);
+    });
+  });
+};
+var vimPath = expandHomeDir("~/.vimrc");
+
+pointsWithin(vimPath, "/home/george/Dropbox", function(msg) { console.log(msg); } );
+
 module.exports.getFileLineCount = getFileLineCount;
 module.exports.getLinesFromFile = getLinesFromFile;
 module.exports.confirmPathExists = confirmPathExists;
