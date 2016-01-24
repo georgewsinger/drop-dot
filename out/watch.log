@@ -1,5 +1,5 @@
 Building ...
 Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
 Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
-... done. Elapsed 0.030733707 seconds
+... done. Elapsed 0.031095541 seconds
 Watching paths: /home/george/Dropbox/drop-dot/src

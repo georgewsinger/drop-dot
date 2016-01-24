@@ -5,17 +5,24 @@
             [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]])
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
-#_(deftest basic
-   (testing "Testing basic CLJS tests."
-    (is (= 5 5))))
-
-
+(go (def ha (<! (core/chan-path-exists? "/home/george/Dropbox"))))
 
 (deftest core-tests
-    (go (is 
-           (<! (core/chan-path-exists? "/home/george/Dropbox"))
-           true)))
+   (testing "Testing core-tests."
+    (go (is (= ha true)))))
+
 (run-tests 'drop-dot.core-test)
+  
+;(def ha (go (<! (core/chan-path-exists? "/home/george/Dropbox"))))
+
+#_(deftest basic
+   (testing "Testing basic CLJS tests."
+    (is (= 6 5))))
+
+#_(deftest core-tests
+    (is  =(ha
+           false)))
+
 
 #_(defn chan-path-exists? [line]
 
