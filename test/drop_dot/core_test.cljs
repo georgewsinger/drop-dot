@@ -9,9 +9,11 @@
 
 (deftest core-tests
    (testing "Testing core-tests."
-    (go (is (= ha true)))))
+    (go (is (= (<! (core/chan-path-exists? "/home/george/Dropbox")) true)))))
 
 (run-tests 'drop-dot.core-test)
+
+(go (is (= (<! (core/chan-path-exists? "/home/george/Dropbox")) true)))
   
 ;(def ha (go (<! (core/chan-path-exists? "/home/george/Dropbox"))))
 

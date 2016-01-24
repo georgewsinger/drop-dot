@@ -1,5 +1,6 @@
 (ns drop-dot.core (:require [cljs.nodejs :as node]
-            [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]])
+            [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]]
+						[cljs.test :refer-macros [deftest is testing run-tests]])
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
 (node/enable-util-print!)
@@ -18,6 +19,9 @@
    (if (chan-path-exists? line) 
      line 
      (str "ERROR: Config " line " does not exist."))))
+
+;QWERTY
+(defn chan-verified-path->chan-verified-droppee [])
 
 ;Pass "ERROR: ..." when necessary through these channels
 (defn drop-line [line]
