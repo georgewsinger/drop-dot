@@ -5,6 +5,30 @@
 
 (node/enable-util-print!)
 
+;QWERTY
+(defn chan-path-exists? [line]
+  (let [res (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js")
+        d   (chan)
+       ]
+    (.confirmPathExists res line (fn [res] (go (>! d res)))) d)
+)
+
+; test data
+#_(go (println (<!(chan-path-exists? "/home/george/Dropboz")))) ; should print false
+
+(defn line->chan-verified-path [line]
+  (go 
+   (if (chan-path-exists? line) 
+     line 
+     (str "ERROR: Config " line " does not exist."))))
+
+; test data
+(do
+  (def c-test (chan))
+  (def c-test (line->chan-verified-path "line"))
+  (go (println (<! c-test))))
+
+
 ; TODO
 (defn dropbox-folder-exists?)
 (defn unix-system?)
@@ -33,7 +57,6 @@
           (recur chan-config))
         (println "done"))))
 
-(defn path-exists? [path])
 
 (defn chan-config-paths []
   (let [c (chan)]

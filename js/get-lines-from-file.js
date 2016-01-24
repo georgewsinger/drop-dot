@@ -43,8 +43,8 @@ var confirmPathExists = function(path, callback) {
   fs.stat(path, confirmPathExistsCallback);
 }
 
-// (.confirmPathExists res path (fn [] (go (>! d))))
-confirmPathExists('file.in', function(res) { console.log(res); });
+// (.confirmPathExists res path (fn [res] (go (>! d res))))
+//confirmPathExists('file.in', function(res) { console.log(res); });
 
 
 /*
@@ -61,3 +61,4 @@ confirmPathExists('file.in', function(res) { console.log(res); });
 
 module.exports.getFileLineCount = getFileLineCount;
 module.exports.getLinesFromFile = getLinesFromFile;
+module.exports.confirmPathExists = confirmPathExists;
