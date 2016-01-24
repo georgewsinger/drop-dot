@@ -15,7 +15,7 @@
   (fn [arg] (go (>! c arg))))
 
 ; TODO
-#_(defn dropbox-folder-exists?)
+#_(defn dropbox-and-drop-dot-folder-exists?)
 #_(defn unix-system?)
 
 (defn chan-path-exists? [line]

@@ -9,7 +9,6 @@
  **/
 
 expandHomeDir = require('expand-home-dir')
-expandHomeDir('~')
 
 var getLinesFromFile = function (path, callback) {
 	var lineReader = require('readline').createInterface({
@@ -70,30 +69,27 @@ function pointsWithin(path, dir, cb) {
   });
 };
 function pointsWithinDropboxDropDot(path, cb) {
-  pointsWithin(path, "~/Dropbox/.dot-drop", cb);
-  console.log("hi");
+  pointsWithin(path, "~/Dropbox/.drop-dot", cb);
 }
 //var vimPath = expandHomeDir("~/.test");
-//var targetPath = expandHomeDir("~/Dropbox/.dot-drop");
+//var targetPath = expandHomeDir("~/Dropbox/.drop-dot");
 //pointsWithin(vimPath, targetPath, function(msg) { console.log(msg); } );
 //pointsWithinDropboxDropDot("~/.test1", function(msg) { console.log(msg); } );
 
-//QWERTY1
-//this function assumes that '~/Dropbox` exists
-function execDropOnVerifiedDroppee(droppee) {
-  //var droppee = expanded(droppee) //assumes droppee is a full path
-  //var basename = ...;
-  //mkdir -p ~/Dropbox/.dot-drop
-	//mv -v droppee ~/Dropbox/.dot-drop/basename
-  //ln -s ~/Dropbox/.dot-drop/base droppee
-}
 
 //QWERTY2
 var execAndPrint = function(arg, cb) {
 	function printConsole(err, stdout, sterr) {
-		console.log(err);
-		console.log(stdout);
-		console.log(sterr);
+		console.log(arg + "\n" + "    " + stdout);
+		/*
+		if (err !== undefined) {
+			console.log(err);
+		}	else if (stdout !== undefined) {
+			console.log(stdout);
+		} else if (sterr !== undefined) {
+			console.log(sterr);
+		}
+		*/
 		if (typeof cb !== "function") {
       return true;
 		}
@@ -102,6 +98,25 @@ var execAndPrint = function(arg, cb) {
 	var exec = require('child_process').exec;	
 	exec(arg, printConsole);
 }
+
+//QWERTY1
+//this function assumes that '~/Dropbox` exists
+function execDropOnVerifiedDroppee(droppee) {
+	//INTENDED LOGIC:
+  //mkdir -p ~/Dropbox/.drop-dot
+	//mv -v droppee ~/Dropbox/.drop-dot/basename
+  //ln -s ~/Dropbox/.drop-dot/base droppee
+  var droppee = expandHomeDir(droppee) //we assume droppee is a valid, full path
+  var basename = require('path').basename(droppee);
+	var link = function(emptyArg) {
+		execAndPrint('ln -sv ~/Dropbox/.drop-dot/' + basename + ' ' + droppee);
+  }
+
+		execAndPrint('mv -v ' + droppee + ' ~/Dropbox/.drop-dot/' + basename, link);
+
+}
+
+execDropOnVerifiedDroppee('~/.test12');
 
 module.exports.execAndPrint = execAndPrint;
 module.exports.execDropOnVerifiedDroppee = execDropOnVerifiedDroppee;
