@@ -5,10 +5,25 @@
 
 (node/enable-util-print!)
 
-; test data
-#_((defn drop-line [line] (println "line: " line))
-   (defn link-line [line] (println "line: " line)))
+; TODO
+(defn dropbox-folder-exists?)
+(defn unix-system?)
 
+;Pass "ERROR: ..." when necessary through these channels
+(defn drop-line [line]
+  (-> line
+    (line->chan-verified-path)
+    (chan-verified-path->chan-verified-droppee) ; i.e., ¬already linked to $D/.dot-drop/..
+    (drop-a-chan-verified-droppee))) ; i.e.: mv line $D/.drop-dot/base && ln -s $D/.drop-dot/base line
+
+
+; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
+(defn link-line [line]
+  (-> line
+    (line->chan-verified-linkee) ; i.e., ¬already ﬂinked up
+    (link-a-chan-verified-linkee))) ; i.e.: `cp line $D/.dot-drop && ln -s $D/.dot-drop line` via silent node
+
+; REPL tested
 (defn chan-config->exec-drop-dot [chan-config cmd]
   (go-loop [chan-config chan-config]
     (let [line (<! chan-config)]
@@ -18,13 +33,7 @@
           (recur chan-config))
         (println "done"))))
 
-; test data
-#_((def cc (chan 2))
-   (go (>! cc "1") (>! cc "2") (close! cc))
-   (chan-config->exec-drop-dot cc "drop"))
-
 (defn path-exists? [path])
-
 
 (defn chan-config-paths []
   (let [c (chan)]

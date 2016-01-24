@@ -10,6 +10,13 @@
    (is (= 5 5))))
 
 ;(go (is = "first line" (<! (core/chan-config-files))))
+
+#_((defn drop-line [line] (println "line: " line))
+   (defn link-line [line] (println "line: " line)))
+
+#_((def cc (chan 2))
+   (go (>! cc "1") (>! cc "2") (close! cc))
+   (core/chan-config->exec-drop-dot cc "drop"))
         
 (run-tests 'drop-dot.core-test)
 
