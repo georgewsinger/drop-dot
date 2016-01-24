@@ -29,17 +29,18 @@
      line 
      (str "ERROR: Config " line " does not exist."))))
 
+; REPL tested
 (defn protocol-msg? [arg] (or (s/includes? arg "ERROR: ") (s/includes? arg "NOTICE: ")))
 
 ;QWERTY
 (defn chan-verified-path->chan-verified-droppee [chan-verified-path]
   (go 
-    (let [path (<! chan-verified-path)
+    (let [verified-path (<! chan-verified-path)
           rc chan
-          f (fn [res] (if (= res true) (go (>! c res)) (go (>! c (str "NOTICE: " path " is already synced.")))))]
-      (if (protocol-msg? path) 
+          f (fn [res] (if (= res true) (go (>! c res)) (go (>! c (str "NOTICE: " verified-path " is already synced.")))))]
+      (if (protocol-msg? verified-path) 
           (>! path rc)
-          (.pointsWithinDropboxDropDot pure-js verified-path f)) rc))
+          (.pointsWithinDropboxDropDot pure-js path f)) rc))
 
 ;Pass "ERROR: ..." when necessary through these channels
 (defn drop-line [line]
