@@ -1,9 +1,12 @@
 (ns drop-dot.core (:require [cljs.nodejs :as node]
-            [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]]
-						[cljs.test :refer-macros [deftest is testing run-tests]])
+                            [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]]
+                            [clojure.string :as s]
+						                [cljs.test :refer-macros [deftest is testing run-tests]])
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
 (node/enable-util-print!)
+
+(def pure-js (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js"))
 
 (defn jam-first-callback-arg-into-chan [c] 
   (fn [arg] (go (>! c arg))))
@@ -26,10 +29,17 @@
      line 
      (str "ERROR: Config " line " does not exist."))))
 
-;QWERTY
-(defn chan-verified-path->chan-verified-droppee [])
-(.pointsWithinDropboxDropDot res verified-path (fn [msg] (go (>! c)))
+(defn protocol-msg? [arg] (or (s/includes? arg "ERROR: ") (s/includes? arg "NOTICE: ")))
 
+;QWERTY
+(defn chan-verified-path->chan-verified-droppee [chan-verified-path]
+  (go 
+    (let [path (<! chan-verified-path)
+          rc chan
+          f (fn [res] (if (= res true) (go (>! c res)) (go (>! c (str "NOTICE: " path " is already synced.")))))]
+      (if (protocol-msg? path) 
+          (>! path rc)
+          (.pointsWithinDropboxDropDot pure-js verified-path f)) rc))
 
 ;Pass "ERROR: ..." when necessary through these channels
 (defn drop-line [line]
@@ -37,7 +47,6 @@
     (line->chan-verified-path)
     (chan-verified-path->chan-verified-droppee) ; i.e., ¬already linked to $D/.dot-drop/..
     (drop-a-chan-verified-droppee))) ; i.e.: mv line $D/.drop-dot/base && ln -s $D/.drop-dot/base line
-
 
 ; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
 (defn link-line [line]
@@ -77,14 +86,10 @@
           e        (or (.-e argv) "e option")
           arg      (or (aget (aget argv "_") 0) "$HOME")]
 
-  (println argv)
-
   (if (= arg "drop")
     (println "drop mode"))
 
   (if (= arg "link")
-    (println "link mode"))
-
-    ))
+    (println "link mode"))))
 
 (set! *main-cli-fn* -main)
