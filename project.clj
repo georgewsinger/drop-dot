@@ -10,7 +10,8 @@
                  [org.clojure/tools.nrepl "0.2.10"]
                  [org.clojure/core.async "0.2.374"]]
 
-  :npm {:dependencies [[minimist "1.2.0"]]}
+  :npm {:dependencies [[minimist "1.2.0"]
+                       [expand-home-dir "0.0.2"]]}
 
   :plugins [[org.bodil/lein-noderepl "0.1.11"]
             [lein-cljsbuild           "1.1.2"]

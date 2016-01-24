@@ -8,6 +8,9 @@
  *
  **/
 
+expandHomeDir = require('expand-home-dir')
+expandHomeDir('~')
+
 var getLinesFromFile = function (path, callback) {
 	var lineReader = require('readline').createInterface({
 		input: require('fs').createReadStream(path)
@@ -24,6 +27,7 @@ var getFileLineCount = function(path, callback) {
 }
 
 var confirmPathExists = function(path, callback) {
+  var path = expandHomeDir(path);
   var confirmPathExistsCallback = function(err, stat) {
         if(err == null) {
             callback(true);
@@ -36,6 +40,20 @@ var confirmPathExists = function(path, callback) {
   var fs = require("fs");
   fs.stat(path, confirmPathExistsCallback);
 }
+
+var confirmPathNotSymLinked = function(path) {
+
+  var path = expandHomeDir(path);
+
+  var fs = require("fs");
+  fs.lstat(path, function(err, stats) { 
+                   console.log("is this file a symlink?: " + stats.isSymbolicLink()); 
+  });
+
+  fs.readlink(path, function(err, linkString) { console.log(linkString) });
+}
+
+confirmPathNotSymLinked("$HOME/.vimrc");
 
 module.exports.getFileLineCount = getFileLineCount;
 module.exports.getLinesFromFile = getLinesFromFile;
