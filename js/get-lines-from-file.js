@@ -76,8 +76,36 @@ function pointsWithinDropboxDropDot(path, cb) {
 //var vimPath = expandHomeDir("~/.test");
 //var targetPath = expandHomeDir("~/Dropbox/.dot-drop");
 //pointsWithin(vimPath, targetPath, function(msg) { console.log(msg); } );
-pointsWithinDropboxDropDot("~/.test1", function(msg) { console.log(msg); } );
+//pointsWithinDropboxDropDot("~/.test1", function(msg) { console.log(msg); } );
 
+//QWERTY1
+//this function assumes that '~/Dropbox` exists
+function execDropOnVerifiedDroppee(droppee) {
+  //var droppee = expanded(droppee) //assumes droppee is a full path
+  //var basename = ...;
+  //mkdir -p ~/Dropbox/.dot-drop
+	//mv -v droppee ~/Dropbox/.dot-drop/basename
+  //ln -s ~/Dropbox/.dot-drop/base droppee
+}
+
+//QWERTY2
+var execAndPrint = function(arg, cb) {
+	function printConsole(err, stdout, sterr) {
+		console.log(err);
+		console.log(stdout);
+		console.log(sterr);
+		if (typeof cb !== "function") {
+      return true;
+		}
+    return cb(true);
+	}
+	var exec = require('child_process').exec;	
+	exec(arg, printConsole);
+}
+
+module.exports.execAndPrint = execAndPrint;
+module.exports.execDropOnVerifiedDroppee = execDropOnVerifiedDroppee;
+module.exports.pointsWithinDropboxDropDot = pointsWithinDropboxDropDot;
 module.exports.getFileLineCount = getFileLineCount;
 module.exports.getLinesFromFile = getLinesFromFile;
 module.exports.confirmPathExists = confirmPathExists;

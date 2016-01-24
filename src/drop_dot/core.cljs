@@ -39,15 +39,24 @@
           rc chan
           f (fn [res] (if (= res true) (go (>! c res)) (go (>! c (str "NOTICE: " verified-path " is already synced.")))))]
       (if (protocol-msg? verified-path) 
-          (>! path rc)
-          (.pointsWithinDropboxDropDot pure-js path f)) rc))
+          (>! rc verified-path)
+          (.pointsWithinDropboxDropDot pure-js verified-path f)) 
+      rc))
+
+;QWERTY
+(defn drop-chan-verified-droppee [c]
+ (go 
+   (let [verified-droppee (<! c)]
+     (if (protocol-msg? verified-droppee) 
+         (println verified-droppee) 
+         (.execDropOnVerifiedDroppee pure-js verified-droppee)))))
 
 ;Pass "ERROR: ..." when necessary through these channels
 (defn drop-line [line]
   (-> line
     (line->chan-verified-path)
     (chan-verified-path->chan-verified-droppee) ; i.e., ¬already linked to $D/.dot-drop/..
-    (drop-a-chan-verified-droppee))) ; i.e.: mv line $D/.drop-dot/base && ln -s $D/.drop-dot/base line
+    (drop-chan-verified-droppee))) ; i.e.: mv line $D/.drop-dot/base && ln -s $D/.drop-dot/base line
 
 ; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
 (defn link-line [line]
