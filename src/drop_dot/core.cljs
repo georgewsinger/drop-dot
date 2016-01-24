@@ -5,6 +5,12 @@
 
 (node/enable-util-print!)
 
+(defn jam-first-callback-arg-into-chan [c] 
+  (fn [arg] (go (>! c arg))))
+
+(defn jam-second-callback-arg-into-chan [c] 
+  (fn [arg] (go (>! c arg))))
+
 ; TODO
 #_(defn dropbox-folder-exists?)
 #_(defn unix-system?)
@@ -22,6 +28,8 @@
 
 ;QWERTY
 (defn chan-verified-path->chan-verified-droppee [])
+(.pointsWithinDropboxDropDot res verified-path (fn [msg] (go (>! c)))
+
 
 ;Pass "ERROR: ..." when necessary through these channels
 (defn drop-line [line]
