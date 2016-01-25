@@ -16,7 +16,8 @@
   :plugins [[org.bodil/lein-noderepl "0.1.11"]
             [lein-cljsbuild           "1.1.2"]
             [lein-npm                 "0.6.1"]
-            [lein-repls               "1.9.5"]]
+            [lein-repls               "1.9.5"]
+            [lein-doo                 "0.1.6"]]
 
   ;:hooks [leiningen.cljsbuild]
 
@@ -36,7 +37,20 @@
         :optimizations :advanced
         :target        :nodejs
         :output-dir    "out"
-        :output-to     "lib/dot-drop.js"
+        :output-to     "lib/drop-dot.js"
         :externs       ["externs.js"]
         :verbose       true
-        :pretty-print  true }}}})
+        :pretty-print  true }}
+
+      :node-test {
+        :source-paths ["src" "test"]
+        :compiler {
+        :optimizations :none
+        :target        :nodejs
+        :output-dir    "out-test"
+        :output-to     "lib/testable.js"
+        :externs       ["externs.js"]
+        :verbose       true
+        :main          drop-dot.runner
+        :pretty-print  true }}
+}})

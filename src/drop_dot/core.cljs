@@ -1,7 +1,8 @@
 (ns drop-dot.core (:require [cljs.nodejs :as node]
                             [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]]
                             [clojure.string :as s]
-						                [cljs.test :refer-macros [deftest is testing run-tests]])
+						                ;[cljs.test :refer-macros [deftest is testing run-tests]]
+                            )
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
 (node/enable-util-print!)
@@ -28,7 +29,7 @@
   (let [c (chan)]
     (chan-vec-cmd->exec (go v))))
 
-(exec-vec-of-commands ["echo 1" "echo 2"])
+;(exec-vec-of-commands ["echo 1" "echo 2" "echo 3" "echo 4" "echo 5"])
 
 
 
@@ -72,7 +73,7 @@
       (if (protocol-msg? verified-path) 
           (>! rc verified-path)
           (.pointsWithinDropboxDropDot pure-js verified-path f)) 
-      rc))
+      rc)))
 
 ;QWERTY
 (defn drop-chan-verified-droppee [c]
