@@ -23,7 +23,7 @@
 
 ; QWERTY
 (deftest support-functions
-  (is (= (core/dropbox-exists?) true))
+  (is (= (core/dropbox-installed?) true))
   (is (= (core/unix-OS?) true))
   (is (= (core/dropdot-folder-exists?) true)))
 

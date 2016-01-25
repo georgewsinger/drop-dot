@@ -33,7 +33,7 @@
 (defn dropdot-folder-exists? []
   (.pathExists pure-js "~/Dropbox/.drop-dot"))
 
-(defn dropbox-exists? []
+(defn dropbox-installed? []
   (.pathExists pure-js "~/Dropbox"))
 
 (defn unix-OS? []
