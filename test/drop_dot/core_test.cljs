@@ -11,7 +11,7 @@
   (testing "Testing some core.async functionality."
     (async done
       (go
-        (is (= (<! (go "val1")) "val2"))
+        (is (= (<! (go "val1")) "val1"))
         (done)))))
 
 #_(deftest core-tests
