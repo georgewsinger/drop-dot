@@ -31,7 +31,7 @@
     (chan-vec-cmd->exec (go v))))
 
 (defn dropdot-folder-exists? []
-  (.pathExists pure-js "~/Dropbox/.drop-dot"))
+  (.pathExists pure-js "~/Dropbox/.drop-dot"));;
 
 (defn dropbox-installed? []
   (.pathExists pure-js "~/Dropbox"))
@@ -122,6 +122,10 @@
           argv     (minimist (clj->js (vec args)))
           e        (or (.-e argv) "e option")
           arg      (or (aget (aget argv "_") 0) "$HOME")]
+
+  (if (or (not (dropbox-installed?))
+          (not (unix-OS?))
+          (not (dropdot-folder-exists?))) (println "Failure.."));
 
   (if (= arg "drop")
     (println "drop mode"))
