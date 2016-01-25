@@ -14,6 +14,37 @@
 (defn jam-second-callback-arg-into-chan [c] 
   (fn [arg] (go (>! c arg))))
 
+(defn chan-vec-cmd->exec [input-chan] 
+  (go-loop [v (<! input-chan)]
+   (if (= (count v) 0)
+       (println "done") ; nil
+       (let [rc  (chan)
+            cmd (first v)]
+         (.execAndPrint pure-js cmd (fn [res] (go (>! rc res)))) 
+         (<! rc)
+         (recur (vec (rest v)))))))
+
+(defn exec-vec-of-commands [v]
+  (let [c (chan)]
+    (chan-vec-cmd->exec (go v))))
+
+(exec-vec-of-commands ["echo 1" "echo 2"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ; TODO
 #_(defn dropbox-and-drop-dot-folder-exists?)
 #_(defn unix-system?)

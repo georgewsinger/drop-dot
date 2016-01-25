@@ -99,6 +99,8 @@ var execAndPrint = function(arg, cb) {
 	exec(arg, printConsole);
 }
 
+
+
 //QWERTY1
 //this function assumes that '~/Dropbox` exists
 function execDropOnVerifiedDroppee(droppee) {
@@ -116,7 +118,7 @@ function execDropOnVerifiedDroppee(droppee) {
 
 }
 
-execDropOnVerifiedDroppee('~/.test12');
+//execDropOnVerifiedDroppee('~/.test12');
 
 module.exports.execAndPrint = execAndPrint;
 module.exports.execDropOnVerifiedDroppee = execDropOnVerifiedDroppee;
