@@ -117,15 +117,24 @@
        config-path
        (fn [res] (go (>! c res) (close-if-done)))))) c))
 
+(defn user-not-an-idiot? []
+   (if (not (dropbox-installed?)) 
+     (do (println "Dropbox not installed.")
+         (.exit node/process)));
+   (if (not (unix-OS?)) 
+     (do (println "Dot-drop requires a UNIX system to run.")
+         (.exit node/process)))
+   (if (not (dropbox-installed?)) 
+     (do (println "Please install Dropbox in your home folder before running this program.")
+         (.exit node/process))))
+
 (defn -main [& args]
   (let [minimist (node/require "minimist")
           argv     (minimist (clj->js (vec args)))
           e        (or (.-e argv) "e option")
           arg      (or (aget (aget argv "_") 0) "$HOME")]
 
-  (if (or (not (dropbox-installed?))
-          (not (unix-OS?))
-          (not (dropdot-folder-exists?))) (println "Failure.."));
+  (user-not-an-idiot?)
 
   (if (= arg "drop")
     (println "drop mode"))

@@ -10,6 +10,7 @@ node.process = {};
 node.process.argv = {};
 node.process.env = {};
 node.process.env.HOME = {};
+node.process.exit = function() {};
 
 var minimist = {};
 
