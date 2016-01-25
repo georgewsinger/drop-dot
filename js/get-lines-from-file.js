@@ -59,6 +59,7 @@ var confirmPathNotSymLinked = function(path) {
 function pointsWithin(path, dir, cb) {
   var path = expandHomeDir(path);
   var dir = expandHomeDir(dir);
+  var fs = require("fs");
   fs.lstat(path, function(err, stats) {
     if (err) return cb("ERROR: " + err);
     if (! stats.isSymbolicLink()) return cb("ERROR: " + path + " not a symlink.");

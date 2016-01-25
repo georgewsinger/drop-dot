@@ -34,7 +34,7 @@
       :main {
         :source-paths ["src"]
         :compiler {
-        :optimizations :advanced
+        :optimizations :none
         :target        :nodejs
         :output-dir    "out"
         :output-to     "lib/drop-dot.js"
@@ -49,7 +49,7 @@
         :target        :nodejs
         :output-dir    "out-test"
         :output-to     "lib/testable.js"
-        :externs       ["externs.js"]
+        :externs       ["externs1.js"]
         :verbose       true
         :main          drop-dot.runner
         :pretty-print  true }}

@@ -41,10 +41,6 @@
     (= (aget node/process "platform") "linux")
     (= (aget node/process "platform") "darwin")))
 
-; QWERTY
-#_(defn dropbox-and-drop-dot-folder-exists?)
-#_(defn unix-system?) ; node -> process.platform === 'linux' OR 'darwin' //check if mac or Unix
-
 (defn chan-path-exists? [line]
   (let [res (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js")
         d   (chan)]
@@ -52,7 +48,7 @@
 
 (defn line->chan-verified-path [line]
   (go 
-   (if (chan-path-exists? line) 
+   (if (<! (chan-path-exists? line))
      line 
      (str "ERROR: Config " line " does not exist."))))
 
@@ -63,12 +59,17 @@
 (defn chan-verified-path->chan-verified-droppee [chan-verified-path]
   (go 
     (let [verified-path (<! chan-verified-path)
-          rc chan
-          f (fn [res] (if (= res true) (go (>! c res)) (go (>! c (str "NOTICE: " verified-path " is already synced.")))))]
+          rc (chan)
+          ;f (fn [res] (if (= res true) (go (>! rc res)) (go (>! rc (str "NOTICE: " verified-path " is already synced.")))))]
+          ]
+      (do
       (if (protocol-msg? verified-path) 
-          (>! rc verified-path)
-          (.pointsWithinDropboxDropDot pure-js verified-path f)) 
-      rc)))
+          ;(do (println "1") (>! rc verified-path))
+          (do (println "1"))
+          (do (println verified-path) (>! rc verified-path) (println (<! rc))))
+          ;(.pointsWithinDropboxDropDot pure-js verified-path f))
+        (println (<! rc))
+      (<! rc)))))
 
 ;QWERTY
 (defn drop-chan-verified-droppee [c]
@@ -80,26 +81,33 @@
 
 ;Pass "ERROR: ..." when necessary through these channels
 (defn drop-line [line]
+  #_(println line)
   (-> line
-    (line->chan-verified-path)
-    (chan-verified-path->chan-verified-droppee) ; i.e., ¬already linked to $D/.dot-drop/..
-    (drop-chan-verified-droppee))) ; i.e.: mv line $D/.drop-dot/base && ln -s $D/.drop-dot/base line
+     (line->chan-verified-path)
+     (chan-verified-path->chan-verified-droppee) ; i.e., ¬already linked to $D/.dot-drop/..
+     (drop-chan-verified-droppee))) ; i.e.: mv line $D/.drop-dot/base && ln -s $D/.drop-dot/base line
 
 ; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
-(defn link-line [line]
+#_(defn link-line [line]
   (-> line
     (line->chan-verified-linkee) ; i.e., ¬already ﬂinked up
     (link-a-chan-verified-linkee))) ; i.e.: `cp line $D/.dot-drop && ln -s $D/.dot-drop line` via silent node
 
 ; REPL tested
-(defn chan-config->exec-drop-dot [chan-config cmd]
-  (go-loop [chan-config chan-config]
-    (let [line (<! chan-config)]
-      (when line
-          (if (= cmd "drop") (drop-line line))
-          (if (= cmd "link") (link-line line))
-          (recur chan-config))
-        (println "done"))))
+(defn chan-config-paths->exec-drop-dot [chan-config cmd]
+   ;(println "here")
+   ;(go (println (<! chan-config)) (println (<! chan-config)) )
+
+   (go-loop [chan-config chan-config]
+     (let [line (<! chan-config)];
+       (when line
+           (if (= cmd "drop") (drop-line line) (println line))
+           #_(if (= cmd "link") #_(link-line line))
+           (recur chan-config)
+          )
+       ))
+  )
+       
 
 (defn chan-config-paths []
   (let [c (chan)]
@@ -117,29 +125,31 @@
        config-path
        (fn [res] (go (>! c res) (close-if-done)))))) c))
 
-(defn user-not-an-idiot? []
+(defn check-for-sys-requirements []
    (if (not (dropbox-installed?)) 
      (do (println "Dropbox not installed.")
          (.exit node/process)));
    (if (not (unix-OS?)) 
-     (do (println "Dot-drop requires a UNIX system to run.")
-         (.exit node/process)))
+     (do (println "Dot-drop requires a UNIX system to run.") (.exit node/process)))
    (if (not (dropbox-installed?)) 
      (do (println "Please install Dropbox in your home folder before running this program.")
          (.exit node/process))))
 
 (defn -main [& args]
-  (let [minimist (node/require "minimist")
+  ;(let [minimist (node/require "minimist")
+  (let [minimist (cljs.nodejs/require "minimist")
           argv     (minimist (clj->js (vec args)))
           e        (or (.-e argv) "e option")
           arg      (or (aget (aget argv "_") 0) "$HOME")]
+  
+  (check-for-sys-requirements)
 
-  (user-not-an-idiot?)
-
-  (if (= arg "drop")
-    (println "drop mode"))
-
-  (if (= arg "link")
-    (println "link mode"))))
+      (if (= arg "drop")
+        (do
+          (println "drop mode")
+          (chan-config-paths->exec-drop-dot (chan-config-paths) "drop")))
+      (if (= arg "link")
+        (do
+          (println "link mode")))))
 
 (set! *main-cli-fn* -main)
