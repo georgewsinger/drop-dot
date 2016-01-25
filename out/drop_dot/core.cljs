@@ -25,30 +25,25 @@
          (<! rc)
          (recur (vec (rest v)))))))
 
+;(exec-vec-of-commands ["echo 1" "echo 2" "echo 3" "echo 4" "echo 5"])
 (defn exec-vec-of-commands [v]
   (let [c (chan)]
     (chan-vec-cmd->exec (go v))))
 
-;(exec-vec-of-commands ["echo 1" "echo 2" "echo 3" "echo 4" "echo 5"])
+(defn dropdot-folder-exists? []
+  (.pathExists pure-js "~/Dropbox/.drop-dot"))
 
+(defn dropbox-exists? []
+  (.pathExists pure-js "~/Dropbox"))
 
+(defn unix-OS? []
+  (or
+    (= (aget node/process "platform") "linux")
+    (= (aget node/process "platform") "darwin")))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-; TODO
+; QWERTY
 #_(defn dropbox-and-drop-dot-folder-exists?)
-#_(defn unix-system?)
+#_(defn unix-system?) ; node -> process.platform === 'linux' OR 'darwin' //check if mac or Unix
 
 (defn chan-path-exists? [line]
   (let [res (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js")

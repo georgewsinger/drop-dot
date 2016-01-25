@@ -7,18 +7,25 @@
 
 ;(go (def ha (<! (core/chan-path-exists? "/home/george/Dropbox"))))
 
-(deftest async-test
+#_(deftest async-test
   (testing "Testing some core.async functionality."
     (async done
       (go
-        (is (= (<! (go "val1")) "val1"))
+        (is (= (<! (go "val1")) "val2"))
         (done)))))
 
-#_(deftest core-tests
+(deftest core-tests
   (async done
    (testing "Testing core-tests."
-    (go (is (= (<! (core/chan-path-exists? "/home/george/Dropbox")) false))
+    (go (is (= (<! (core/chan-path-exists? "/home/george/Dropbox")) true))
       (done)))))
+
+
+; QWERTY
+(deftest support-functions
+  (is (= (core/dropbox-exists?) true))
+  (is (= (core/unix-OS?) true))
+  (is (= (core/dropdot-folder-exists?) true)))
 
 (run-tests 'drop-dot.core-test)
 

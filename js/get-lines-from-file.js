@@ -118,8 +118,17 @@ function execDropOnVerifiedDroppee(droppee) {
 
 }
 
-//execDropOnVerifiedDroppee('~/.test12');
+function pathExists(filePath) {
+  var filePath = expandHomeDir(filePath);
+  var fs = require('fs');
+  try {
+    return fs.statSync(filePath).isDirectory();
+  } catch (err) {
+    return false;
+  }
+}
 
+module.exports.pathExists = pathExists;
 module.exports.execAndPrint = execAndPrint;
 module.exports.execDropOnVerifiedDroppee = execDropOnVerifiedDroppee;
 module.exports.pointsWithinDropboxDropDot = pointsWithinDropboxDropDot;
