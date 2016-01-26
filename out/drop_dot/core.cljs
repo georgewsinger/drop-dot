@@ -60,14 +60,11 @@
   (go 
     (let [verified-path (<! chan-verified-path)
           rc (chan 1)
-          ;f (fn [res] (if (= res true) (go (>! rc res)) (go (>! rc res)) ))]
           f (fn [res] (if (= res true)  (go (>! rc (str "NOTICE: " verified-path " is already synced.")))  (go (>! rc verified-path)) ))]
       (do
       (if (protocol-msg? verified-path) 
           (>! rc verified-path)
-          ;(>! rc verified-path))
           (.pointsWithinDropboxDropDot pure-js verified-path f))
-        ;(println (<! rc))
       (<! rc)))))
 
 ;QWERTY
