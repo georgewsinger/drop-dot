@@ -141,6 +141,18 @@ function pathExists(filePath) {
   }
 }
 
+function getBasename(arg) {
+  return require('path').basename(arg);
+}
+
+
+/*
+pathExists("~/Dropboxzz");
+pathExists("~/.te");
+pathExists("~/.test23andMe");
+*/
+
+module.exports.pathExists = getBasename;
 module.exports.pathExists = pathExists;
 module.exports.dirExists = dirExists;
 module.exports.execAndPrint = execAndPrint;
