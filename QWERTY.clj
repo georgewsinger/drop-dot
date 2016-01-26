@@ -26,12 +26,14 @@ A:
 
 B:
 
-(defn link-chan-path-that-needs-linking [c])
-(go 
-  (let [config-path         (<! c)
-        config-path-dirname (.getDirname pure-js config-path)
-        linkable-basename   (.getBasename pure-js config-path)]
-
+(defn link-chan-path-that-needs-linking [c]
+  (go 
+    (let [config-path         (.localExpandHomeDir pure-js (<! c)) ; expanded path
+          config-path-dirname (.getDirname pure-js config-path) ; expanded path w/in pure-js function
+          linkable-basename   (.getBasename pure-js config-path)])) ; expanded w/in pure-js function
+      (exec-vec-of-commands 
+        [(str "mkdir -vp " config-dirname)
+         (str "ln -sv ~/Dropbox/.drop-dot/" linkable-basename " " config-path)]))
 
 1. absurd/doesnt/exist/linkable-basename 
 2. 
