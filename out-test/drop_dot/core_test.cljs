@@ -73,3 +73,7 @@
    (go (>! cc "1") (>! cc "2") (close! cc))
    (core/chan-config->exec-drop-dot cc "drop"))
         
+; The manual test of drop-dot dot (and, in particular, of (chan-verified-path->chan-verified-droppee ..)
+; ~/.test30 // ¬linked                           ; outcome: link message
+; ~/.test31 //  linked -> $D/.test31             ; outcome: link message
+; ~/.test32 //  linked -> $D/.drop-dot/.test32   ; outcome: NOTICE: already linked

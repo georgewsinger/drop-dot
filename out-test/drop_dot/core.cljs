@@ -31,10 +31,10 @@
     (chan-vec-cmd->exec (go v))))
 
 (defn dropdot-folder-exists? []
-  (.pathExists pure-js "~/Dropbox/.drop-dot"));;
+  (.dirExists pure-js "~/Dropbox/.drop-dot"));;
 
 (defn dropbox-installed? []
-  (.pathExists pure-js "~/Dropbox"))
+  (.dirExists pure-js "~/Dropbox"))
 
 (defn unix-OS? []
   (or
@@ -59,16 +59,12 @@
 (defn chan-verified-path->chan-verified-droppee [chan-verified-path]
   (go 
     (let [verified-path (<! chan-verified-path)
-          rc (chan)
-          ;f (fn [res] (if (= res true) (go (>! rc res)) (go (>! rc (str "NOTICE: " verified-path " is already synced.")))))]
-          ]
+          rc (chan 1)
+          f (fn [res] (if (= res true)  (go (>! rc (str "NOTICE: " verified-path " is already synced.")))  (go (>! rc verified-path)) ))]
       (do
       (if (protocol-msg? verified-path) 
-          ;(do (println "1") (>! rc verified-path))
-          (do (println "1"))
-          (do (println verified-path) (>! rc verified-path) (println (<! rc))))
-          ;(.pointsWithinDropboxDropDot pure-js verified-path f))
-        (println (<! rc))
+          (>! rc verified-path)
+          (.pointsWithinDropboxDropDot pure-js verified-path f))
       (<! rc)))))
 
 ;QWERTY

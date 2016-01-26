@@ -6,7 +6,19 @@
 ;   \__\_\ \_/\_/  |_____|_| \_\|_|   |_|   
 ;                                           
 
-; The manual test of drop-dot dot (and, in particular, of (chan-verified-path->chan-verified-droppee ..)
-; ~/.test30 // ¬linked                           ; outcome: link message
-; ~/.test31 //  linked -> $D/.test31             ; outcome: link message
-; ~/.test32 //  linked -> $D/.drop-dot/.test32   ; outcome: NOTICE: already linked
+; `drop-dot link` should probably be called `drop-dot update`
+
+(line->chan-verified-linkee) ; i.e., ¬already ﬂinked up
+
+CONFIG FILE:
+  ~/.test
+
+COMPUTER A:
+  drop-dot drop
+
+DESIRED STATE: 
+  ~/.test -> ~/.drop-dot/.test
+
+
+
+

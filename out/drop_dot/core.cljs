@@ -31,10 +31,10 @@
     (chan-vec-cmd->exec (go v))))
 
 (defn dropdot-folder-exists? []
-  (.pathExists pure-js "~/Dropbox/.drop-dot"));;
+  (.dirExists pure-js "~/Dropbox/.drop-dot"));;
 
 (defn dropbox-installed? []
-  (.pathExists pure-js "~/Dropbox"))
+  (.dirExists pure-js "~/Dropbox"))
 
 (defn unix-OS? []
   (or
