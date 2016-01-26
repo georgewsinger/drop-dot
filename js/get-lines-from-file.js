@@ -142,9 +142,16 @@ function pathExists(filePath, cb) {
 }
 
 function getBasename(arg) {
-  return require('path').basename(arg);
+  return expandHomeDir(require('path').basename(arg));
 }
 
+function getDirname(arg) {
+  return expandHomeDir(require('path').dirname(arg));
+}
+
+function localExpandHomeDir(arg) {
+  return expandHomeDir(arg);
+}
 
 /*
 pathExists("~/Dropboxzz");
@@ -152,6 +159,7 @@ pathExists("~/.te");
 pathExists("~/.test23andMe");
 */
 
+module.exports.getDirname = getDirname;
 module.exports.getBasename = getBasename;
 module.exports.pathExists = pathExists;
 module.exports.dirExists = dirExists;
