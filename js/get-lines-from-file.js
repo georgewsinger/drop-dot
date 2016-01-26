@@ -131,13 +131,13 @@ function dirExists(filePath) {
   }
 }
 
-function pathExists(filePath) {
+function pathExists(filePath, cb) {
   var filePath = expandHomeDir(filePath);
   var fs = require('fs');
   try {
-    return (fs.statSync(filePath).isDirectory() || fs.statSync(filePath).isFile());
+    return cb(fs.statSync(filePath).isDirectory() || fs.statSync(filePath).isFile());
   } catch (err) {
-    return false;
+    return cb(false);
   }
 }
 
@@ -152,7 +152,7 @@ pathExists("~/.te");
 pathExists("~/.test23andMe");
 */
 
-module.exports.pathExists = getBasename;
+module.exports.getBasename = getBasename;
 module.exports.pathExists = pathExists;
 module.exports.dirExists = dirExists;
 module.exports.execAndPrint = execAndPrint;

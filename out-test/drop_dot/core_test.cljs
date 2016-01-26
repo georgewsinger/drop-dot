@@ -8,6 +8,16 @@
 
 ;(go (def ha (<! (core/chan-path-exists? "/home/george/Dropbox"))))
 
+;QWERTY
+(deftest line->chan-linkable-path-TEST
+  (async done
+    (go
+      (let [c (chan 1)]
+        (is (= (<! (core/line->chan-linkable-path "~/.TDD-this-file-in-dot-drop-dot")) "~/.TDD-this-file-in-dot-drop-dot"))
+        (is (s/includes? (<! (core/line->chan-linkable-path "~/.TDD-this-file-doesnt-exist")) "ERROR: "))
+        (is (s/includes? (<! (core/line->chan-linkable-path "~/.TDD-this-file-exists-in-home-folder-but-not-drop-dot")) "ERROR: "))
+        (done)))))
+
 (deftest async-test
   (testing "Testing some core.async functionality."
     (async done
@@ -42,7 +52,6 @@
       (done)))))
 
 
-; QWERTY
 #_(deftest support-functions
   (is (= (core/dropbox-installed?) true))
   (is (= (core/unix-OS?) true))

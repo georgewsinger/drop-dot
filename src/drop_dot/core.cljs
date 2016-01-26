@@ -55,7 +55,6 @@
 ; REPL tested
 (defn protocol-msg? [arg] (or (s/includes? arg "ERROR: ") (s/includes? arg "NOTICE: ")))
 
-;QWERTY
 (defn chan-verified-path->chan-verified-droppee [chan-verified-path]
   (go 
     (let [verified-path (<! chan-verified-path)
@@ -67,7 +66,6 @@
           (.pointsWithinDropboxDropDot pure-js verified-path f))
       (<! rc)))))
 
-;QWERTY
 (defn drop-chan-verified-droppee [c]
  (go 
    (let [verified-droppee (<! c)]
@@ -82,6 +80,26 @@
      (line->chan-verified-path)
      (chan-verified-path->chan-verified-droppee) ; i.e., ¬already linked to $D/.dot-drop/..
      (drop-chan-verified-droppee))) ; i.e.: mv line $D/.drop-dot/base && ln -s $D/.drop-dot/base line
+
+; INTENDED LOGIC:
+;   1. basename
+;   2.  (basename ∈ ~/Dropbox/.drop-dot) ⇒ (>! rc line)
+;   3. ¬(basename ∈ ~/Dropbox/.drop-dot) ⇒ (>! rc "ERROR: ")
+; QWERTY
+(defn line->chan-linkable-path [line]
+  (let [
+        basename      (.getBasename pure-js line)
+        target-path   (str "~/Dropbox/.drop-dot/" basename)
+        rc            (chan 1)
+        cb            (fn [res] 
+                        (if (= res true)  
+                            (go (>! rc line))
+                            (go (>! rc (str "ERROR: Invalid line: there is nothing to sync " line " to in your ~/Dropbox/.dot-drop folder.")))))]
+  (.pathExists pure-js target-path cb)
+    #_(println "basename: ")
+    #_(println "target-path: ")
+    #_(>! rc line)
+  rc))
 
 ; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
 #_(defn link-line [line]
