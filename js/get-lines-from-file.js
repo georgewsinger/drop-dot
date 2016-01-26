@@ -57,15 +57,30 @@ var confirmPathNotSymLinked = function(path) {
 //confirmPathNotSymLinked("~/.vimrc");
 
 function pointsWithin(path, dir, cb) {
+  console.log("1");
   var path = expandHomeDir(path);
   var dir = expandHomeDir(dir);
   var fs = require("fs");
   fs.lstat(path, function(err, stats) {
+  console.log("2");
     if (err) return cb("ERROR: " + err);
-    if (! stats.isSymbolicLink()) return cb("ERROR: " + path + " not a symlink.");
+  console.log("2.5");
+    //if (! stats.isSymbolicLink()) return cb("ERROR: " + path + " not a symlink.");
+    console.log(!stats.isSymbolicLink());
+    if (!stats.isSymbolicLink()) return cb(false);
+  console.log("2.6");
     fs.readlink(path, function(err, dest) {
-      if (err) return cb("ERROR" + err);
-      return cb(dest.indexOf(dir) === 0);
+  console.log("2.7");
+      console.log("dest: ", dest);
+      console.log("dir: ", dir);
+      //console.log("comp: " , dest.indexOf(dir));
+  console.log("3");
+      if (err) return cb("ERROR: " + err);
+  console.log("4");
+  //console.log(dest.indexOf(dir) === 0);
+      return cb(true);
+      //return cb(dest.indexOf(dir) === 0);
+      //return false;
     });
   });
 };
