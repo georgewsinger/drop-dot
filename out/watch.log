@@ -15940,3 +15940,429 @@ Change detected, recompiling ...
 Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
 Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
 ... done. Elapsed 0.031455539 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 139 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 151 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.396831243 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031534376 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 139 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 152 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.361423181 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031677381 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 152 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.407401577 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031248959 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 152 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.361161958 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031556809 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 152 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.361803588 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.030796843 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 152 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.34814205 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031581298 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 152 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.367298841 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.034872665 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 152 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.371615601 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031496853 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.409933569 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031869895 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.376496482 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.036217175 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/chan-linkable-path->chan-path-that-wants-linking at line 152 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.350611527 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.030909073 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.353898347 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031289519 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/linkable-basename at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-path at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.360164886 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.032004355 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.348409908 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031062426 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.390582632 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031327939 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 140 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.350699599 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031426986 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.050334914 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Wrong number of args (2) passed to drop-dot.core/protocol-msg? at line 135 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 142 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.36214743 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031454372 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 142 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.357196083 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031240446 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.37153039 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.035756676 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.366899442 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.032730288 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/<--SENT at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/TO at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/verified-droppee at line 216 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.369511059 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031312151 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/<--SENT at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/TO at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/verified-droppee at line 216 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.359314116 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031957166 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/<--SENT at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/TO at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/verified-droppee at line 216 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.37741821 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031528963 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/<--SENT at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/TO at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/verified-droppee at line 216 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.409397172 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031514585 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/<--SENT at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/TO at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/verified-droppee at line 216 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.365171196 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031111585 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/<--SENT at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/TO at line 73 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.366419247 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031685857 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.352362694 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031486482 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 141 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.370319024 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.037380091 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 138 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 142 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.35937478 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031504253 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/config-dirname at line 138 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.396149045 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.034568948 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.353078373 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.03305287 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.36474074 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.033640929 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.359567657 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.03168839 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.39038105 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.030740634 seconds

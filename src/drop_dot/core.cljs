@@ -18,7 +18,8 @@
 (defn chan-vec-cmd->exec [input-chan] 
   (go-loop [v (<! input-chan)]
    (if (= (count v) 0)
-       (println "done") ; nil
+       ;(println "COMPLETE!") ; nil
+			 nil
        (let [rc  (chan)
             cmd (first v)]
          (.execAndPrint pure-js cmd (fn [res] (go (>! rc res)))) 
@@ -50,7 +51,7 @@
   (go 
    (if (<! (chan-path-exists? line))
      line 
-     (str "ERROR: Config " line " does not exist."))))
+     (str "ERROR: " line " does not exist on this machine."))))
 
 ; REPL tested
 (defn protocol-msg? [arg] (or (s/includes? arg "ERROR: ") (s/includes? arg "NOTICE: ")))
@@ -59,7 +60,7 @@
   (go 
     (let [verified-path (<! chan-verified-path)
           rc (chan 1)
-          f (fn [res] (if (= res true)  (go (>! rc (str "NOTICE: " verified-path " is already synced.")))  (go (>! rc verified-path)) ))]
+          f (fn [res] (if (= res true)  (go (>! rc (str "NOTICE: " verified-path " is already synced on this machine.")))  (go (>! rc verified-path)) ))]
       (do
       (if (protocol-msg? verified-path) 
           (>! rc verified-path)
@@ -70,7 +71,7 @@
  (go 
    (let [verified-droppee (<! c)]
      (if (protocol-msg? verified-droppee) 
-         (println verified-droppee) 
+         (println verified-droppee)
          (.execDropOnVerifiedDroppee pure-js verified-droppee)))))
 
 ;Pass "ERROR: ..." when necessary through these channels
@@ -94,7 +95,7 @@
         cb            (fn [res] 
                         (if (= res true)  
                             (go (>! rc line))
-                            (go (>! rc (str "ERROR: Invalid line: there is nothing to sync " line " to in your ~/Dropbox/.dot-drop folder.")))))]
+                            (go (>! rc (str "ERROR: Invalid line: there is nothing to link " line " to in your ~/Dropbox/.dot-drop folder.")))))]
   (.pathExists pure-js target-path cb) rc))
 
 ;NOTES:
@@ -134,10 +135,12 @@
   (go 
     (let [config-path         (.localExpandHomeDir pure-js (<! c)) ; expanded path
           config-path-dirname (.getDirname pure-js config-path) ; expanded path w/in pure-js function
-          linkable-basename   (.getBasename pure-js config-path)])) ; expanded w/in pure-js function
+          linkable-basename   (.getBasename pure-js config-path)] ; expanded w/in pure-js function
+      (if (protocol-msg? config-path) (println (str config-path))
+
       (exec-vec-of-commands 
-        [(str "mkdir -vp " config-dirname)
-         (str "ln -sv ~/Dropbox/.drop-dot/" linkable-basename " " config-path)]))
+        [(str "mkdir -vp " config-path-dirname)
+         (str "ln -sv ~/Dropbox/.drop-dot/" linkable-basename " " config-path)])))))
 
 ; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
 #_(defn link-line [line]
@@ -148,18 +151,16 @@
 (defn link-line [line]
   (-> line
     (line->chan-linkable-path)
-    (chan-linkable-path->chan-path-that-wants-linking)
-    (chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking))) 
+    (chan-linkable-path->chan-linkable-path-that-wants-linking)
+    (chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking)
+    (link-chan-path-that-needs-linking))) 
 
 ; REPL tested
 (defn chan-config-paths->exec-drop-dot [chan-config cmd]
-   ;(println "here")
-   ;(go (println (<! chan-config)) (println (<! chan-config)) )
-
    (go-loop [chan-config chan-config]
      (let [line (<! chan-config)];
        (when line
-           (if (= cmd "drop") (drop-line line) (println line))
+           (if (= cmd "drop") (drop-line line))
            (if (= cmd "link") (link-line line))
            (recur chan-config)
           )
@@ -204,10 +205,11 @@
 
       (if (= arg "drop")
         (do
-          (println "drop mode")
+          (println "DROP!")
           (chan-config-paths->exec-drop-dot (chan-config-paths) "drop")))
       (if (= arg "link")
         (do
-          (println "link mode")))))
+          (println "LINK!")
+ (chan-config-paths->exec-drop-dot (chan-config-paths) "link")))))
 
 (set! *main-cli-fn* -main)

@@ -71,6 +71,13 @@ function pointsWithin(path, dir, cb) {
     });
   });
 };
+
+function isntLocallyConflicted(configPath,cb) {
+  
+}
+
+
+
 function pointsWithinDropboxDropDot(path, cb) {
   pointsWithin(path, "~/Dropbox/.drop-dot", cb);
 }
@@ -159,6 +166,7 @@ pathExists("~/.te");
 pathExists("~/.test23andMe");
 */
 
+module.exports.localExpandHomeDir = localExpandHomeDir;
 module.exports.getDirname = getDirname;
 module.exports.getBasename = getBasename;
 module.exports.pathExists = pathExists;
