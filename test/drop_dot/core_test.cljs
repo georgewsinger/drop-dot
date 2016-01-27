@@ -17,7 +17,27 @@
   ; path ∈ config; path ∈ .drop-dot; path ∈ ~/hard-file        ⇒ "path" = "path"
   ; path ∈ config; path ∈ .drop-dot; path -> something-random  ⇒ "path" = "path"
 
-;QWERTY
+; QWERTY
+(deftest chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking-TEST
+  (async done
+    (go
+        (is 
+          (s/includes? 
+            (<!  (core/chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking (go "~/.in-home-and-drop-dot-seperately-no-links"))) 
+            "ERROR:"))
+
+        (is 
+          (s/includes? 
+            (<! (core/chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking (go "~/.in-drop-dot-and-home-but-home-points-to-something-random"))) 
+            "ERROR: "))
+
+        (is 
+          (=
+            (<! (core/chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking (go "~/.in-drop-dot-only"))) 
+            "~/.in-drop-dot-only"))
+       
+        (done))))
+
 (deftest chan-linkable-path->chan-path-that-wants-linking-TEST
   (async done
     (go

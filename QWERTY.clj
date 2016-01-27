@@ -51,7 +51,7 @@ Q: What happens if I drop TWICE? Will the program fuck up?
 ;(path-doesn't-exist?) -> pass-through OTHERWISE "ERROR: ... please remove and re-run this command."
 ;(path-exists) && (pathNotDropBoxLinked?)
 
-(defn chan-linkable-path-that-wants-linking->chan-linkable-path-that-needs-linking [chan-linkable-path-that-wants-linking] ;i.e., without conflict
+(defn chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking [chan-linkable-path-that-wants-linking] ;i.e., without conflict
   (go
    (let [linkable-path (<! chan-linkable-path-that-wants-linking)
          rc            (chan 1)
@@ -64,6 +64,27 @@ Q: What happens if I drop TWICE? Will the program fuck up?
           (>! rc linkable-path)
           (.pathExists pure-js linkable-path f)) ; ■ .isntLocallyConflicted 
       (<! rc)))))
+
+; QWERTY
+(deftest chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking-TEST
+  (async done
+    (go
+        (is 
+          (s/includes? 
+            (<!  (core/chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking (go "~/.in-home-and-drop-dot-seperately-no-links"))) 
+            "ERROR:"))
+
+        (is 
+          (s/includes? 
+            (<! (core/chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking (go "~/.in-drop-dot-and-home-but-home-points-to-something-random"))) 
+            "ERROR: "))
+
+        (is 
+          (=
+            (<! (core/chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking (go "~/.in-drop-dot-only"))) 
+            "~/.in-drop-dot-only: "))
+       
+        (done))))
 
 B:
 

@@ -106,7 +106,7 @@
 ;(path-doesn't-exist?) -> pass-through OTHERWISE "ERROR: ... please remove and re-run this command."
 ;(path-exists) && (pathNotDropBoxLinked?)
 
-;QWERTY
+
 (defn chan-linkable-path->chan-path-that-wants-linking [chan-linkable-path]
   (go 
     (let [linkable-path (<! chan-linkable-path)
@@ -117,6 +117,27 @@
            (>! rc linkable-path)
            (.pointsWithinDropboxDropDot pure-js linkable-path f))
        (<! rc)))))
+
+;QWERTY
+(defn chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking [chan-linkable-path-that-wants-linking] ;i.e., without conflict
+  (go
+   (let [
+         linkable-path (<! chan-linkable-path-that-wants-linking)
+         rc            (chan 1)
+          f            (fn [res] 
+                         (if (= res true)  
+                         (go (>! rc (str "ERROR: " linkable-path " already has a version on this system; please remove this file and re-run this command.")))  
+                         (go (>! rc linkable-path))))
+         ]
+     (do
+      (if (protocol-msg? linkable-path) 
+          (>! rc linkable-path)
+          (.pathExists pure-js linkable-path f)) ; ■ .isntLocallyConflicted 
+      (<! rc)))))
+
+; delete this if you still see it
+#_(defn chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking [arg] arg)
+
 
 ; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
 #_(defn link-line [line]
