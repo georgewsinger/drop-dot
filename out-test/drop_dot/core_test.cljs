@@ -38,12 +38,12 @@
        
         (done))))
 
-(deftest chan-linkable-path->chan-path-that-wants-linking-TEST
+(deftest chan-linkable-path->chan-linkable-path-that-wants-linking-TEST
   (async done
     (go
-        (is (s/includes? (<! (core/chan-linkable-path->chan-path-that-wants-linking (go "~/.home-to-drop-dot"))) "NOTICE: "))
-        (is (= (<! (core/chan-linkable-path->chan-path-that-wants-linking (go "~/.in-home-and-drop-dot-seperately-no-links"))) "~/.in-home-and-drop-dot-seperately-no-links"))
-        (is (= (<! (core/chan-linkable-path->chan-path-that-wants-linking (go "~/.in-drop-dot-and-home-but-home-points-to-something-random"))) "~/.in-drop-dot-and-home-but-home-points-to-something-random"))
+        (is (s/includes? (<! (core/chan-linkable-path->chan-linkable-path-that-wants-linking (go "~/.home-to-drop-dot"))) "NOTICE: "))
+        (is (= (<! (core/chan-linkable-path->chan-linkable-path-that-wants-linking (go "~/.in-home-and-drop-dot-seperately-no-links"))) "~/.in-home-and-drop-dot-seperately-no-links"))
+        (is (= (<! (core/chan-linkable-path->chan-linkable-path-that-wants-linking (go "~/.in-drop-dot-and-home-but-home-points-to-something-random"))) "~/.in-drop-dot-and-home-but-home-points-to-something-random"))
         (done))))
 
 ;QWERTY

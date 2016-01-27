@@ -95,11 +95,7 @@
                         (if (= res true)  
                             (go (>! rc line))
                             (go (>! rc (str "ERROR: Invalid line: there is nothing to sync " line " to in your ~/Dropbox/.dot-drop folder.")))))]
-  (.pathExists pure-js target-path cb)
-    #_(println "basename: ")
-    #_(println "target-path: ")
-    #_(>! rc line)
-  rc))
+  (.pathExists pure-js target-path cb) rc))
 
 ;NOTES:
 ;1. localConflictDoesntExist OR localConflicExistsButIsntAlreadySymLinkedToDropboxDotFolder
@@ -107,7 +103,7 @@
 ;(path-exists) && (pathNotDropBoxLinked?)
 
 
-(defn chan-linkable-path->chan-path-that-wants-linking [chan-linkable-path]
+(defn chan-linkable-path->chan-linkable-path-that-wants-linking [chan-linkable-path]
   (go 
     (let [linkable-path (<! chan-linkable-path)
           rc (chan 1)
@@ -118,7 +114,6 @@
            (.pointsWithinDropboxDropDot pure-js linkable-path f))
        (<! rc)))))
 
-;QWERTY
 (defn chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking [chan-linkable-path-that-wants-linking] ;i.e., without conflict
   (go
    (let [
@@ -135,15 +130,26 @@
           (.pathExists pure-js linkable-path f)) ; ■ .isntLocallyConflicted 
       (<! rc)))))
 
-; delete this if you still see it
-#_(defn chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking [arg] arg)
-
+(defn link-chan-path-that-needs-linking [c]
+  (go 
+    (let [config-path         (.localExpandHomeDir pure-js (<! c)) ; expanded path
+          config-path-dirname (.getDirname pure-js config-path) ; expanded path w/in pure-js function
+          linkable-basename   (.getBasename pure-js config-path)])) ; expanded w/in pure-js function
+      (exec-vec-of-commands 
+        [(str "mkdir -vp " config-dirname)
+         (str "ln -sv ~/Dropbox/.drop-dot/" linkable-basename " " config-path)]))
 
 ; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
 #_(defn link-line [line]
   (-> line
     (line->chan-verified-linkee) ; i.e., ¬already ﬂinked up
     (link-a-chan-verified-linkee))) ; i.e.: `cp line $D/.dot-drop && ln -s $D/.dot-drop line` via silent node
+
+(defn link-line [line]
+  (-> line
+    (line->chan-linkable-path)
+    (chan-linkable-path->chan-path-that-wants-linking)
+    (chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking))) 
 
 ; REPL tested
 (defn chan-config-paths->exec-drop-dot [chan-config cmd]
@@ -154,7 +160,7 @@
      (let [line (<! chan-config)];
        (when line
            (if (= cmd "drop") (drop-line line) (println line))
-           #_(if (= cmd "link") #_(link-line line))
+           (if (= cmd "link") (link-line line))
            (recur chan-config)
           )
        ))
