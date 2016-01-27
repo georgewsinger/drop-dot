@@ -322,3 +322,4 @@ as
 (quit)
 (load-file "../repl.clj")
 (load-file "repl.clj")
+(quit)

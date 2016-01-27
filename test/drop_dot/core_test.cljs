@@ -6,7 +6,25 @@
             [clojure.string :as s])
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
-;(go (def ha (<! (core/chan-path-exists? "/home/george/Dropbox"))))
+; [ ] "~/.home-to-drop-dot" -> "$D/.drop-dot/.home-to-drop-dot" ; "NOTICE: "
+; [ ] "~/.in-home-and-drop-dot-seperately-no-links", "$D/.drop-dot/.in-home-and-drop-dot-seperately-no-links" ; "~/name" = "~/name"
+
+; [ ] "~/.in-drop-dot-and-home-but-home-points-to-something-random" -> "~/random/.in-drop-dot-and-home-but-home-points-to-something-random",
+; [ ] "$D/.drop-dot/.in-drop-dot-and-home-but-home-points-to-something-random" ; "~/name" = "~/name"
+
+; path ∈ config; path ∈ .drop-dot; path -> .drop-dot already -> "NOTICE: "
+; path ∈ config; path ∈ .drop-dot; path -/-> .drop-dot -> "path" = "path"
+  ; path ∈ config; path ∈ .drop-dot; path ∈ ~/hard-file        ⇒ "path" = "path"
+  ; path ∈ config; path ∈ .drop-dot; path -> something-random  ⇒ "path" = "path"
+
+;QWERTY
+(deftest chan-linkable-path->chan-path-that-wants-linking-TEST
+  (async done
+    (go
+        (is (s/includes? (<! (core/chan-linkable-path->chan-path-that-wants-linking (go "~/.home-to-drop-dot"))) "NOTICE: "))
+        (is (= (<! (core/chan-linkable-path->chan-path-that-wants-linking (go "~/.in-home-and-drop-dot-seperately-no-links"))) "~/.in-home-and-drop-dot-seperately-no-links"))
+        (is (= (<! (core/chan-linkable-path->chan-path-that-wants-linking (go "~/.in-drop-dot-and-home-but-home-points-to-something-random"))) "~/.in-drop-dot-and-home-but-home-points-to-something-random"))
+        (done))))
 
 ;QWERTY
 (deftest line->chan-linkable-path-TEST

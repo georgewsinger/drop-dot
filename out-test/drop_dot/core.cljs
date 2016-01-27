@@ -85,7 +85,7 @@
 ;   1. basename
 ;   2.  (basename ∈ ~/Dropbox/.drop-dot) ⇒ (>! rc line)
 ;   3. ¬(basename ∈ ~/Dropbox/.drop-dot) ⇒ (>! rc "ERROR: ")
-; QWERTY
+
 (defn line->chan-linkable-path [line]
   (let [
         basename      (.getBasename pure-js line)
@@ -100,6 +100,23 @@
     #_(println "target-path: ")
     #_(>! rc line)
   rc))
+
+;NOTES:
+;1. localConflictDoesntExist OR localConflicExistsButIsntAlreadySymLinkedToDropboxDotFolder
+;(path-doesn't-exist?) -> pass-through OTHERWISE "ERROR: ... please remove and re-run this command."
+;(path-exists) && (pathNotDropBoxLinked?)
+
+;QWERTY
+(defn chan-linkable-path->chan-path-that-wants-linking [chan-linkable-path]
+  (go 
+    (let [linkable-path (<! chan-linkable-path)
+          rc (chan 1)
+          f (fn [res] (if (= res true)  (go (>! rc (str "NOTICE: " linkable-path " is already synced.")))  (go (>! rc linkable-path))))]
+      (do
+       (if (protocol-msg? linkable-path) 
+           (>! rc linkable-path)
+           (.pointsWithinDropboxDropDot pure-js linkable-path f))
+       (<! rc)))))
 
 ; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
 #_(defn link-line [line]
