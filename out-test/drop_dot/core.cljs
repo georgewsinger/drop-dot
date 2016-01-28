@@ -1,15 +1,12 @@
 (ns drop-dot.core (:require [cljs.nodejs :as node]
                             [cljs.core.async :refer [buffer offer! poll! close! take! put! chan <! >! alts!]]
-                            [clojure.string :as s]
-						                ;[cljs.test :refer-macros [deftest is testing run-tests]]
-                            )
-  (:require-macros [cljs.core.async.macros :refer [go go-loop]]
-                   [cljs-asynchronize.macros :as dm :refer [asynchronize]]
-))
+                            [clojure.string :as s])
+                  (:require-macros [cljs.core.async.macros :refer [go go-loop]]
+                                   [cljs-asynchronize.macros :as dm :refer [asynchronize]]))
 
 (node/enable-util-print!)
 
-(def pure-js (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js"))
+(def pure-js (node/require "../js/pure-js.js"))
 
 #_(def fs (node/require "fs"))
 #_(asynchronize
@@ -20,16 +17,15 @@
   (println f2)
   (println f3));
 
-(defn jam-first-callback-arg-into-chan [c] 
+#_(defn jam-first-callback-arg-into-chan [c] 
   (fn [arg] (go (>! c arg))))
 
-(defn jam-second-callback-arg-into-chan [c] 
+#_(defn jam-second-callback-arg-into-chan [c] 
   (fn [arg] (go (>! c arg))))
 
 (defn chan-vec-cmd->exec [input-chan] 
   (go-loop [v (<! input-chan)]
    (if (= (count v) 0)
-       ;(println "COMPLETE!") ; nil
 			 nil
        (let [rc  (chan)
             cmd (first v)]
@@ -37,7 +33,6 @@
          (<! rc)
          (recur (vec (rest v)))))))
 
-;(exec-vec-of-commands ["echo 1" "echo 2" "echo 3" "echo 4" "echo 5"])
 (defn exec-vec-of-commands [v]
   (let [c (chan)]
     (chan-vec-cmd->exec (go v))))
@@ -49,34 +44,32 @@
   (.dirExists pure-js "~/Dropbox"))
 
 (defn unix-OS? []
-  (or
-    (= (aget node/process "platform") "linux")
-    (= (aget node/process "platform") "darwin")))
+  (or (= (aget node/process "platform") "linux")
+      (= (aget node/process "platform") "darwin")))
 
 (defn chan-path-exists? [line]
-  (let [res (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js")
+  (let [res (node/require "../js/pure-js.js")
         d   (chan)]
     (.confirmPathExists res line (fn [res] (go (>! d res)))) d))
 
 (defn line->chan-verified-path [line]
   (go 
    (if (<! (chan-path-exists? line))
-     line 
-     (str "ERROR: " line " does not exist on this machine."))))
+       line 
+       (str "ERROR: " line " does not exist on this machine."))))
 
-; REPL tested
 (defn protocol-msg? [arg] (or (s/includes? arg "ERROR: ") (s/includes? arg "NOTICE: ")))
 
 (defn chan-verified-path->chan-verified-droppee [chan-verified-path]
   (go 
     (let [verified-path (<! chan-verified-path)
           rc (chan 1)
-          f (fn [res] (if (= res true)  (go (>! rc (str "NOTICE: " verified-path " is already synced on this machine.")))  (go (>! rc verified-path)) ))]
+          f (fn [res] (if (= res true) (go (>! rc (str "NOTICE: " verified-path " is already synced on this machine."))) (go (>! rc verified-path))))]
       (do
-      (if (protocol-msg? verified-path) 
-          (>! rc verified-path)
-          (.pointsWithinDropboxDropDot pure-js verified-path f))
-      (<! rc)))))
+       (if (protocol-msg? verified-path) 
+           (>! rc verified-path)
+           (.pointsWithinDropboxDropDot pure-js verified-path f))
+       (<! rc)))))
 
 (defn drop-chan-verified-droppee [c]
  (go 
@@ -85,22 +78,14 @@
          (println verified-droppee)
          (.execDropOnVerifiedDroppee pure-js verified-droppee)))))
 
-;Pass "ERROR: ..." when necessary through these channels
 (defn drop-line [line]
-  #_(println line)
   (-> line
      (line->chan-verified-path)
-     (chan-verified-path->chan-verified-droppee) ; i.e., ¬already linked to $D/.dot-drop/..
-     (drop-chan-verified-droppee))) ; i.e.: mv line $D/.drop-dot/base && ln -s $D/.drop-dot/base line
-
-; INTENDED LOGIC:
-;   1. basename
-;   2.  (basename ∈ ~/Dropbox/.drop-dot) ⇒ (>! rc line)
-;   3. ¬(basename ∈ ~/Dropbox/.drop-dot) ⇒ (>! rc "ERROR: ")
+     (chan-verified-path->chan-verified-droppee)
+     (drop-chan-verified-droppee)))
 
 (defn line->chan-linkable-path [line]
-  (let [
-        basename      (.getBasename pure-js line)
+  (let [basename      (.getBasename pure-js line)
         target-path   (str "~/Dropbox/.drop-dot/" basename)
         rc            (chan 1)
         cb            (fn [res] 
@@ -108,12 +93,6 @@
                             (go (>! rc line))
                             (go (>! rc (str "ERROR: Invalid line: there is nothing to link " line " to in your ~/Dropbox/.dot-drop folder.")))))]
   (.pathExists pure-js target-path cb) rc))
-
-;NOTES:
-;1. localConflictDoesntExist OR localConflicExistsButIsntAlreadySymLinkedToDropboxDotFolder
-;(path-doesn't-exist?) -> pass-through OTHERWISE "ERROR: ... please remove and re-run this command."
-;(path-exists) && (pathNotDropBoxLinked?)
-
 
 (defn chan-linkable-path->chan-linkable-path-that-wants-linking [chan-linkable-path]
   (go 
@@ -128,36 +107,27 @@
 
 (defn chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking [chan-linkable-path-that-wants-linking] ;i.e., without conflict
   (go
-   (let [
-         linkable-path (<! chan-linkable-path-that-wants-linking)
+   (let [linkable-path (<! chan-linkable-path-that-wants-linking)
          rc            (chan 1)
           f            (fn [res] 
                          (if (= res true)  
                          (go (>! rc (str "ERROR: " linkable-path " already has a version on this system; please remove this file and re-run this command.")))  
-                         (go (>! rc linkable-path))))
-         ]
+                         (go (>! rc linkable-path))))]
      (do
       (if (protocol-msg? linkable-path) 
           (>! rc linkable-path)
-          (.pathExists pure-js linkable-path f)) ; ■ .isntLocallyConflicted 
+          (.pathExists pure-js linkable-path f))
       (<! rc)))))
 
 (defn link-chan-path-that-needs-linking [c]
   (go 
     (let [config-path         (.localExpandHomeDir pure-js (<! c)) ; expanded path
-          config-path-dirname (.getDirname pure-js config-path) ; expanded path w/in pure-js function
-          linkable-basename   (.getBasename pure-js config-path)] ; expanded w/in pure-js function
+          config-path-dirname (.getDirname pure-js config-path) ; this path will be expanded w/in its pure-js function
+          linkable-basename   (.getBasename pure-js config-path)] ; this path will be expanded w/in its pure-js function
       (if (protocol-msg? config-path) (println (str config-path))
-
-      (exec-vec-of-commands 
-        [(str "mkdir -vp " config-path-dirname)
-         (str "ln -sv ~/Dropbox/.drop-dot/" linkable-basename " " config-path)])))))
-
-; Pass "ERROR: ..." and "NOTICE: ..." messages when needed
-#_(defn link-line [line]
-  (-> line
-    (line->chan-verified-linkee) ; i.e., ¬already ﬂinked up
-    (link-a-chan-verified-linkee))) ; i.e.: `cp line $D/.dot-drop && ln -s $D/.dot-drop line` via silent node
+        (exec-vec-of-commands 
+          [(str "mkdir -vp " config-path-dirname)
+           (str "ln -sv ~/Dropbox/.drop-dot/" linkable-basename " " config-path)])))))
 
 (defn link-line [line]
   (-> line
@@ -166,23 +136,19 @@
     (chan-linkable-path-that-wants-linking->chan-linkable-path-without-conflict-that-needs-linking)
     (link-chan-path-that-needs-linking))) 
 
-; REPL tested
 (defn chan-config-paths->exec-drop-dot [chan-config cmd]
    (go-loop [chan-config chan-config]
      (let [line (<! chan-config)];
        (when line
            (if (= cmd "drop") (drop-line line))
            (if (= cmd "link") (link-line line))
-           (recur chan-config)
-          )
-       ))
-  )
-       
+           (recur chan-config)))))
 
 (defn chan-config-paths []
   (let [c (chan)]
-   (go (let [res         (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js") ; "../js/get-liens-from-file.js" fails in repl
-         config-path     "/home/george/Dropbox/drop-dot/js/file.in" 
+   (go (let [res         (node/require "../js/pure-js.js")
+         ;config-path     "/home/george/Dropbox/drop-dot/js/file.in" 
+         config-path     "~/Dropbox/.drop-dot/.drop-dot" 
          wcc             (chan 1)
          wcc-jammer      (fn [error, res] (go (>! wcc res)))
          get-wc          (.getFileLineCount res config-path wcc-jammer)
@@ -211,16 +177,14 @@
           argv     (minimist (clj->js (vec args)))
           e        (or (.-e argv) "e option")
           arg      (or (aget (aget argv "_") 0) "$HOME")]
-  
   (check-for-sys-requirements)
-
-      (if (= arg "drop")
-        (do
-          (println "DROP!")
-          (chan-config-paths->exec-drop-dot (chan-config-paths) "drop")))
-      (if (= arg "link")
-        (do
-          (println "LINK!")
- (chan-config-paths->exec-drop-dot (chan-config-paths) "link")))))
+  (if (= arg "drop")
+    (do
+     (println "Dropping files from your config into ~/Dropbox/.drop-dot")
+     (chan-config-paths->exec-drop-dot (chan-config-paths) "drop")))
+  (if (= arg "link")
+    (do
+      (println "Linking files specified in  your config.")
+      (chan-config-paths->exec-drop-dot (chan-config-paths) "link")))))
 
 (set! *main-cli-fn* -main)

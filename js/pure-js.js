@@ -11,6 +11,7 @@
 expandHomeDir = require('expand-home-dir')
 
 var getLinesFromFile = function (path, callback) {
+  var path = expandHomeDir(path);
 	var lineReader = require('readline').createInterface({
 		input: require('fs').createReadStream(path)
 	});
@@ -22,6 +23,7 @@ var getLinesFromFile = function (path, callback) {
 
 var getFileLineCount = function(path, callback) {
   var exec = require('child_process').exec;
+  var path = expandHomeDir(path);
   exec("wc -l < " + path, callback);
 }
 
