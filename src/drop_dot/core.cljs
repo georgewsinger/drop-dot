@@ -172,4 +172,4 @@
       (println "Linking files specified in  your config.")
       (chan-config-paths->exec-drop-dot (chan-config-paths) "link")))))
 
-(set! *main-cli-fn* -main)
+(set! *main-cli-fn* -main) ; fin

@@ -27,3 +27,9 @@ var getLinesFromFile = function() {};
 var confirmPathExists = function() {};
 
 var minimist = function(arg1) {};
+
+
+var dirExists = function() {};
+var getBasename = function() {};
+var localExpandHomeDir = function() {};
+var getDirname = function() {};

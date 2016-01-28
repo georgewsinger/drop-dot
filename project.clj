@@ -15,13 +15,14 @@
         
         :package {:name "drop-dot"
                         :version "0.0.1"
-                        :bin "index.js"
+                        :bin "lib/drop-dot.js"
                         :description "CLI utility to sync config files, dot files, and directories across UNIX machines using Dropbox."
-                        :main "index.js"
+                        :main "lib/drop-dot.js"
                         :repository {:type "git" :url "git+https://github.com/georgewsinger/drop-dot.git"}
                         :keywords ["dropbox" "sync" "config" "dot" "dotfile"]
                         :author "George Singer"
                         :license "MIT"
+                        :private false
                         :homepage "https://github.com/georgewsinger/drop-dot#readme"}}
 
   :plugins [[org.bodil/lein-noderepl "0.1.11"]
@@ -45,7 +46,7 @@
       :main {
         :source-paths ["src"]
         :compiler {
-        :optimizations :none
+        :optimizations :advanced
         :target        :nodejs
         :output-dir    "out"
         :output-to     "lib/drop-dot.js"
