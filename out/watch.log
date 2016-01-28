@@ -16366,3 +16366,404 @@ Change detected, recompiling ...
 Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
 Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
 ... done. Elapsed 0.030740634 seconds
+Change detected, recompiling ...
+clojure.lang.ExceptionInfo: Unmatched delimiter ) {:type :reader-exception, :line 7, :column 75, :file "/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs"}
+	at clojure.core$ex_info.invokeStatic(core.clj:4617)
+	at clojure.core$ex_info.invoke(core.clj:4617)
+	at clojure.tools.reader.reader_types$reader_error.invokeStatic(reader_types.clj:391)
+	at clojure.tools.reader.reader_types$reader_error.doInvoke(reader_types.clj:387)
+	at clojure.lang.RestFn.invoke(RestFn.java:439)
+	at clojure.tools.reader$read_unmatched_delimiter.invokeStatic(reader.clj:76)
+	at clojure.tools.reader$read_unmatched_delimiter.invoke(reader.clj:74)
+	at clojure.tools.reader$read_STAR_.invokeStatic(reader.clj:889)
+	at clojure.tools.reader$read_STAR_.invoke(reader.clj:870)
+	at clojure.tools.reader$read_delimited.invokeStatic(reader.clj:195)
+	at clojure.tools.reader$read_delimited.invoke(reader.clj:188)
+	at clojure.tools.reader$read_vector.invokeStatic(reader.clj:226)
+	at clojure.tools.reader$read_vector.invoke(reader.clj:222)
+	at clojure.tools.reader$read_STAR_.invokeStatic(reader.clj:889)
+	at clojure.tools.reader$read_STAR_.invoke(reader.clj:870)
+	at clojure.tools.reader$read_delimited.invokeStatic(reader.clj:195)
+	at clojure.tools.reader$read_delimited.invoke(reader.clj:188)
+	at clojure.tools.reader$read_list.invokeStatic(reader.clj:208)
+	at clojure.tools.reader$read_list.invoke(reader.clj:204)
+	at clojure.tools.reader$read_STAR_.invokeStatic(reader.clj:889)
+	at clojure.tools.reader$read_STAR_.invoke(reader.clj:870)
+	at clojure.tools.reader$read_delimited.invokeStatic(reader.clj:195)
+	at clojure.tools.reader$read_delimited.invoke(reader.clj:188)
+	at clojure.tools.reader$read_list.invokeStatic(reader.clj:208)
+	at clojure.tools.reader$read_list.invoke(reader.clj:204)
+	at clojure.tools.reader$read_STAR_.invokeStatic(reader.clj:889)
+	at clojure.tools.reader$read_STAR_.invoke(reader.clj:870)
+	at clojure.tools.reader$read.invokeStatic(reader.clj:938)
+	at clojure.tools.reader$read.invoke(reader.clj:915)
+	at cljs.analyzer$forms_seq_STAR_$forms_seq___3366$fn__3367$fn__3368.invoke(analyzer.cljc:2650)
+	at cljs.analyzer$forms_seq_STAR_$forms_seq___3366$fn__3367.invoke(analyzer.cljc:2643)
+	at clojure.lang.LazySeq.sval(LazySeq.java:40)
+	at clojure.lang.LazySeq.seq(LazySeq.java:49)
+	at clojure.lang.RT.seq(RT.java:521)
+	at clojure.core$seq__4357.invokeStatic(core.clj:137)
+	at clojure.core$seq__4357.invoke(core.clj:137)
+	at cljs.analyzer$parse_ns$fn__3382.invoke(analyzer.cljc:2726)
+	at cljs.analyzer$parse_ns.invokeStatic(analyzer.cljc:2706)
+	at cljs.analyzer$parse_ns.invoke(analyzer.cljc:2687)
+	at cljs.analyzer$parse_ns.invokeStatic(analyzer.cljc:2697)
+	at cljs.analyzer$parse_ns.invoke(analyzer.cljc:2687)
+	at cljs.compiler$find_source.invokeStatic(compiler.cljc:1415)
+	at cljs.compiler$find_source.invoke(compiler.cljc:1414)
+	at clojure.core$map$fn__4785.invoke(core.clj:2646)
+	at clojure.lang.LazySeq.sval(LazySeq.java:40)
+	at clojure.lang.LazySeq.seq(LazySeq.java:49)
+	at clojure.lang.RT.seq(RT.java:521)
+	at clojure.core$seq__4357.invokeStatic(core.clj:137)
+	at clojure.core$reduce1.invokeStatic(core.clj:911)
+	at clojure.core$set.invokeStatic(core.clj:3983)
+	at clojure.core$set.invoke(core.clj:3975)
+	at cljs.closure$add_dependency_sources.invokeStatic(closure.clj:755)
+	at cljs.closure$add_dependency_sources.invoke(closure.clj:749)
+	at cljs.closure$build.invokeStatic(closure.clj:1893)
+	at cljs.closure$build.invoke(closure.clj:1837)
+	at cljs.closure$watch$buildf__6700.invoke(closure.clj:1977)
+	at cljs.closure$watch.invokeStatic(closure.clj:2026)
+	at cljs.closure$watch.invoke(closure.clj:1954)
+	at cljs.repl$repl_STAR_$fn__7227$fn__7232.invoke(repl.cljc:887)
+	at clojure.core$binding_conveyor_fn$fn__4676.invoke(core.clj:1938)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+
+Change detected, recompiling ...
+clojure.lang.ExceptionInfo: Unmatched delimiter ) {:type :reader-exception, :line 7, :column 75, :file "/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs"}
+	at clojure.core$ex_info.invokeStatic(core.clj:4617)
+	at clojure.core$ex_info.invoke(core.clj:4617)
+	at clojure.tools.reader.reader_types$reader_error.invokeStatic(reader_types.clj:391)
+	at clojure.tools.reader.reader_types$reader_error.doInvoke(reader_types.clj:387)
+	at clojure.lang.RestFn.invoke(RestFn.java:439)
+	at clojure.tools.reader$read_unmatched_delimiter.invokeStatic(reader.clj:76)
+	at clojure.tools.reader$read_unmatched_delimiter.invoke(reader.clj:74)
+	at clojure.tools.reader$read_STAR_.invokeStatic(reader.clj:889)
+	at clojure.tools.reader$read_STAR_.invoke(reader.clj:870)
+	at clojure.tools.reader$read_delimited.invokeStatic(reader.clj:195)
+	at clojure.tools.reader$read_delimited.invoke(reader.clj:188)
+	at clojure.tools.reader$read_vector.invokeStatic(reader.clj:226)
+	at clojure.tools.reader$read_vector.invoke(reader.clj:222)
+	at clojure.tools.reader$read_STAR_.invokeStatic(reader.clj:889)
+	at clojure.tools.reader$read_STAR_.invoke(reader.clj:870)
+	at clojure.tools.reader$read_delimited.invokeStatic(reader.clj:195)
+	at clojure.tools.reader$read_delimited.invoke(reader.clj:188)
+	at clojure.tools.reader$read_list.invokeStatic(reader.clj:208)
+	at clojure.tools.reader$read_list.invoke(reader.clj:204)
+	at clojure.tools.reader$read_STAR_.invokeStatic(reader.clj:889)
+	at clojure.tools.reader$read_STAR_.invoke(reader.clj:870)
+	at clojure.tools.reader$read_delimited.invokeStatic(reader.clj:195)
+	at clojure.tools.reader$read_delimited.invoke(reader.clj:188)
+	at clojure.tools.reader$read_list.invokeStatic(reader.clj:208)
+	at clojure.tools.reader$read_list.invoke(reader.clj:204)
+	at clojure.tools.reader$read_STAR_.invokeStatic(reader.clj:889)
+	at clojure.tools.reader$read_STAR_.invoke(reader.clj:870)
+	at clojure.tools.reader$read.invokeStatic(reader.clj:938)
+	at clojure.tools.reader$read.invoke(reader.clj:915)
+	at cljs.analyzer$forms_seq_STAR_$forms_seq___3366$fn__3367$fn__3368.invoke(analyzer.cljc:2650)
+	at cljs.analyzer$forms_seq_STAR_$forms_seq___3366$fn__3367.invoke(analyzer.cljc:2643)
+	at clojure.lang.LazySeq.sval(LazySeq.java:40)
+	at clojure.lang.LazySeq.seq(LazySeq.java:49)
+	at clojure.lang.RT.seq(RT.java:521)
+	at clojure.core$seq__4357.invokeStatic(core.clj:137)
+	at clojure.core$seq__4357.invoke(core.clj:137)
+	at cljs.analyzer$parse_ns$fn__3382.invoke(analyzer.cljc:2726)
+	at cljs.analyzer$parse_ns.invokeStatic(analyzer.cljc:2706)
+	at cljs.analyzer$parse_ns.invoke(analyzer.cljc:2687)
+	at cljs.analyzer$parse_ns.invokeStatic(analyzer.cljc:2697)
+	at cljs.analyzer$parse_ns.invoke(analyzer.cljc:2687)
+	at cljs.compiler$find_source.invokeStatic(compiler.cljc:1415)
+	at cljs.compiler$find_source.invoke(compiler.cljc:1414)
+	at clojure.core$map$fn__4785.invoke(core.clj:2646)
+	at clojure.lang.LazySeq.sval(LazySeq.java:40)
+	at clojure.lang.LazySeq.seq(LazySeq.java:49)
+	at clojure.lang.RT.seq(RT.java:521)
+	at clojure.core$seq__4357.invokeStatic(core.clj:137)
+	at clojure.core$reduce1.invokeStatic(core.clj:911)
+	at clojure.core$set.invokeStatic(core.clj:3983)
+	at clojure.core$set.invoke(core.clj:3975)
+	at cljs.closure$add_dependency_sources.invokeStatic(closure.clj:755)
+	at cljs.closure$add_dependency_sources.invoke(closure.clj:749)
+	at cljs.closure$build.invokeStatic(closure.clj:1893)
+	at cljs.closure$build.invoke(closure.clj:1837)
+	at cljs.closure$watch$buildf__6700.invoke(closure.clj:1977)
+	at cljs.closure$watch.invokeStatic(closure.clj:2026)
+	at cljs.closure$watch.invoke(closure.clj:1954)
+	at cljs.repl$repl_STAR_$fn__7227$fn__7232.invoke(repl.cljc:887)
+	at clojure.core$binding_conveyor_fn$fn__4676.invoke(core.clj:1938)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+clojure.lang.ExceptionInfo: failed compiling file:src/drop_dot/core.cljs {:file #object[java.io.File 0x14035c5a "src/drop_dot/core.cljs"]}
+	at clojure.core$ex_info.invokeStatic(core.clj:4617)
+	at clojure.core$ex_info.invoke(core.clj:4617)
+	at cljs.compiler$compile_file$fn__4414.invoke(compiler.cljc:1369)
+	at cljs.compiler$compile_file.invokeStatic(compiler.cljc:1336)
+	at cljs.compiler$compile_file.invoke(compiler.cljc:1316)
+	at cljs.closure$compile_file.invokeStatic(closure.clj:437)
+	at cljs.closure$compile_file.invoke(closure.clj:428)
+	at cljs.closure$eval6182$fn__6183.invoke(closure.clj:504)
+	at cljs.closure$eval6118$fn__6119$G__6107__6126.invoke(closure.clj:394)
+	at cljs.closure$compile_sources$iter__6302__6306$fn__6307.invoke(closure.clj:827)
+	at clojure.lang.LazySeq.sval(LazySeq.java:40)
+	at clojure.lang.LazySeq.seq(LazySeq.java:49)
+	at clojure.lang.Cons.next(Cons.java:39)
+	at clojure.lang.RT.next(RT.java:688)
+	at clojure.core$next__4341.invokeStatic(core.clj:64)
+	at clojure.core$dorun.invokeStatic(core.clj:3033)
+	at clojure.core$doall.invokeStatic(core.clj:3039)
+	at clojure.core$doall.invoke(core.clj:3039)
+	at cljs.closure$compile_sources.invokeStatic(closure.clj:823)
+	at cljs.closure$compile_sources.invoke(closure.clj:812)
+	at cljs.closure$build.invokeStatic(closure.clj:1895)
+	at cljs.closure$build.invoke(closure.clj:1837)
+	at cljs.closure$watch$buildf__6700.invoke(closure.clj:1977)
+	at cljs.closure$watch.invokeStatic(closure.clj:2026)
+	at cljs.closure$watch.invoke(closure.clj:1954)
+	at cljs.repl$repl_STAR_$fn__7227$fn__7232.invoke(repl.cljc:887)
+	at clojure.core$binding_conveyor_fn$fn__4676.invoke(core.clj:1938)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: clojure.lang.ExceptionInfo: Could not locate cljs_asynchronize/macros__init.class or cljs_asynchronize/macros.clj on classpath. Please check that namespaces with dashes use underscores in the Clojure file name. in file src/drop_dot/core.cljs {:tag :cljs/analysis-error}
+	at clojure.core$ex_info.invokeStatic(core.clj:4617)
+	at clojure.core$ex_info.invoke(core.clj:4617)
+	at cljs.analyzer$error.invokeStatic(analyzer.cljc:576)
+	at cljs.analyzer$error.invoke(analyzer.cljc:572)
+	at cljs.analyzer$analyze.invokeStatic(analyzer.cljc:2610)
+	at cljs.analyzer$analyze.invoke(analyzer.cljc:2599)
+	at cljs.compiler$emit_source.invokeStatic(compiler.cljc:1237)
+	at cljs.compiler$emit_source.invoke(compiler.cljc:1217)
+	at cljs.compiler$compile_file_STAR_$fn__4391.invoke(compiler.cljc:1288)
+	at cljs.compiler$with_core_cljs.invokeStatic(compiler.cljc:1152)
+	at cljs.compiler$with_core_cljs.invoke(compiler.cljc:1143)
+	at cljs.compiler$compile_file_STAR_.invokeStatic(compiler.cljc:1277)
+	at cljs.compiler$compile_file_STAR_.invoke(compiler.cljc:1273)
+	at cljs.compiler$compile_file$fn__4414.invoke(compiler.cljc:1357)
+	... 26 more
+Caused by: java.io.FileNotFoundException: Could not locate cljs_asynchronize/macros__init.class or cljs_asynchronize/macros.clj on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+	at clojure.lang.RT.load(RT.java:456)
+	at clojure.lang.RT.load(RT.java:419)
+	at clojure.core$load$fn__5677.invoke(core.clj:5893)
+	at clojure.core$load.invokeStatic(core.clj:5892)
+	at clojure.core$load.doInvoke(core.clj:5876)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at clojure.core$load_one.invokeStatic(core.clj:5697)
+	at clojure.core$load_one.invoke(core.clj:5692)
+	at clojure.core$load_lib$fn__5626.invoke(core.clj:5737)
+	at clojure.core$load_lib.invokeStatic(core.clj:5736)
+	at clojure.core$load_lib.doInvoke(core.clj:5717)
+	at clojure.lang.RestFn.applyTo(RestFn.java:142)
+	at clojure.core$apply.invokeStatic(core.clj:648)
+	at clojure.core$load_libs.invokeStatic(core.clj:5774)
+	at clojure.core$load_libs.doInvoke(core.clj:5758)
+	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+	at clojure.core$apply.invokeStatic(core.clj:648)
+	at clojure.core$require.invokeStatic(core.clj:5796)
+	at clojure.core$require.doInvoke(core.clj:5796)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at cljs.analyzer$ns_side_effects$fn__3310.invoke(analyzer.cljc:2525)
+	at cljs.analyzer$ns_side_effects.invokeStatic(analyzer.cljc:2524)
+	at cljs.analyzer$ns_side_effects.invoke(analyzer.cljc:2507)
+	at cljs.analyzer$analyze_STAR_$fn__3358.invoke(analyzer.cljc:2597)
+	at clojure.lang.PersistentVector.reduce(PersistentVector.java:341)
+	at clojure.core$reduce.invokeStatic(core.clj:6544)
+	at clojure.core$reduce.invoke(core.clj:6527)
+	at cljs.analyzer$analyze_STAR_.invokeStatic(analyzer.cljc:2597)
+	at cljs.analyzer$analyze_STAR_.invoke(analyzer.cljc:2587)
+	at cljs.analyzer$analyze.invokeStatic(analyzer.cljc:2612)
+	... 35 more
+
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.036821359 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.348782533 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.050923959 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+clojure.lang.ExceptionInfo: failed compiling file:src/drop_dot/core.cljs {:file #object[java.io.File 0x777a65f4 "src/drop_dot/core.cljs"]}
+	at clojure.core$ex_info.invokeStatic(core.clj:4617)
+	at clojure.core$ex_info.invoke(core.clj:4617)
+	at cljs.compiler$compile_file$fn__4414.invoke(compiler.cljc:1369)
+	at cljs.compiler$compile_file.invokeStatic(compiler.cljc:1336)
+	at cljs.compiler$compile_file.invoke(compiler.cljc:1316)
+	at cljs.closure$compile_file.invokeStatic(closure.clj:437)
+	at cljs.closure$compile_file.invoke(closure.clj:428)
+	at cljs.closure$eval6182$fn__6183.invoke(closure.clj:504)
+	at cljs.closure$eval6118$fn__6119$G__6107__6126.invoke(closure.clj:394)
+	at cljs.closure$compile_sources$iter__6302__6306$fn__6307.invoke(closure.clj:827)
+	at clojure.lang.LazySeq.sval(LazySeq.java:40)
+	at clojure.lang.LazySeq.seq(LazySeq.java:49)
+	at clojure.lang.Cons.next(Cons.java:39)
+	at clojure.lang.RT.next(RT.java:688)
+	at clojure.core$next__4341.invokeStatic(core.clj:64)
+	at clojure.core$dorun.invokeStatic(core.clj:3033)
+	at clojure.core$doall.invokeStatic(core.clj:3039)
+	at clojure.core$doall.invoke(core.clj:3039)
+	at cljs.closure$compile_sources.invokeStatic(closure.clj:823)
+	at cljs.closure$compile_sources.invoke(closure.clj:812)
+	at cljs.closure$build.invokeStatic(closure.clj:1895)
+	at cljs.closure$build.invoke(closure.clj:1837)
+	at cljs.closure$watch$buildf__6700.invoke(closure.clj:1977)
+	at cljs.closure$watch.invokeStatic(closure.clj:2026)
+	at cljs.closure$watch.invoke(closure.clj:1954)
+	at cljs.repl$repl_STAR_$fn__7227$fn__7232.invoke(repl.cljc:887)
+	at clojure.core$binding_conveyor_fn$fn__4676.invoke(core.clj:1938)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: clojure.lang.ExceptionInfo: Could not locate cljs_asynchronize/macros__init.class or cljs_asynchronize/macros.clj on classpath. Please check that namespaces with dashes use underscores in the Clojure file name. in file src/drop_dot/core.cljs {:tag :cljs/analysis-error}
+	at clojure.core$ex_info.invokeStatic(core.clj:4617)
+	at clojure.core$ex_info.invoke(core.clj:4617)
+	at cljs.analyzer$error.invokeStatic(analyzer.cljc:576)
+	at cljs.analyzer$error.invoke(analyzer.cljc:572)
+	at cljs.analyzer$analyze.invokeStatic(analyzer.cljc:2610)
+	at cljs.analyzer$analyze.invoke(analyzer.cljc:2599)
+	at cljs.compiler$emit_source.invokeStatic(compiler.cljc:1237)
+	at cljs.compiler$emit_source.invoke(compiler.cljc:1217)
+	at cljs.compiler$compile_file_STAR_$fn__4391.invoke(compiler.cljc:1288)
+	at cljs.compiler$with_core_cljs.invokeStatic(compiler.cljc:1152)
+	at cljs.compiler$with_core_cljs.invoke(compiler.cljc:1143)
+	at cljs.compiler$compile_file_STAR_.invokeStatic(compiler.cljc:1277)
+	at cljs.compiler$compile_file_STAR_.invoke(compiler.cljc:1273)
+	at cljs.compiler$compile_file$fn__4414.invoke(compiler.cljc:1357)
+	... 26 more
+Caused by: java.io.FileNotFoundException: Could not locate cljs_asynchronize/macros__init.class or cljs_asynchronize/macros.clj on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+	at clojure.lang.RT.load(RT.java:456)
+	at clojure.lang.RT.load(RT.java:419)
+	at clojure.core$load$fn__5677.invoke(core.clj:5893)
+	at clojure.core$load.invokeStatic(core.clj:5892)
+	at clojure.core$load.doInvoke(core.clj:5876)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at clojure.core$load_one.invokeStatic(core.clj:5697)
+	at clojure.core$load_one.invoke(core.clj:5692)
+	at clojure.core$load_lib$fn__5626.invoke(core.clj:5737)
+	at clojure.core$load_lib.invokeStatic(core.clj:5736)
+	at clojure.core$load_lib.doInvoke(core.clj:5717)
+	at clojure.lang.RestFn.applyTo(RestFn.java:142)
+	at clojure.core$apply.invokeStatic(core.clj:648)
+	at clojure.core$load_libs.invokeStatic(core.clj:5774)
+	at clojure.core$load_libs.doInvoke(core.clj:5758)
+	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+	at clojure.core$apply.invokeStatic(core.clj:648)
+	at clojure.core$require.invokeStatic(core.clj:5796)
+	at clojure.core$require.doInvoke(core.clj:5796)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at cljs.analyzer$ns_side_effects$fn__3310.invoke(analyzer.cljc:2525)
+	at cljs.analyzer$ns_side_effects.invokeStatic(analyzer.cljc:2524)
+	at cljs.analyzer$ns_side_effects.invoke(analyzer.cljc:2507)
+	at cljs.analyzer$analyze_STAR_$fn__3358.invoke(analyzer.cljc:2597)
+	at clojure.lang.PersistentVector.reduce(PersistentVector.java:341)
+	at clojure.core$reduce.invokeStatic(core.clj:6544)
+	at clojure.core$reduce.invoke(core.clj:6527)
+	at cljs.analyzer$analyze_STAR_.invokeStatic(analyzer.cljc:2597)
+	at cljs.analyzer$analyze_STAR_.invoke(analyzer.cljc:2587)
+	at cljs.analyzer$analyze.invokeStatic(analyzer.cljc:2612)
+	... 35 more
+
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.030702379 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.580971187 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.053204569 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/fs at line 15 src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 18 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 18 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/f1 at line 18 src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 19 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 19 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/f2 at line 19 src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 20 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 20 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/fs at line 16 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/fs at line 17 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.417952226 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.030432069 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 19 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 19 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/f1 at line 19 src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 20 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 20 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/f2 at line 20 src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 21 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 21 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.414514252 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.033602295 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 19 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 19 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/f1 at line 19 src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 20 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 20 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/f2 at line 20 src/drop_dot/core.cljs
+WARNING: No such namespace: console, could not locate console.cljs, console.cljc, or Closure namespace "" at line 21 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var console/log at line 21 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.41373592 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.032535103 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/f1 at line 19 src/drop_dot/core.cljs
+WARNING: Use of undeclared Var drop-dot.core/f2 at line 20 src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.417493599 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.030015709 seconds
+Change detected, recompiling ...
+Compiling src/drop_dot/core.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+Copying file:/home/george/Dropbox/drop-dot/src/drop_dot/core.cljs to out/drop_dot/core.cljs
+... done. Elapsed 0.345097574 seconds
+Change detected, recompiling ...
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejs.cljs to out/cljs/nodejs.cljs
+Copying jar:file:/home/george/.m2/repository/org/clojure/clojurescript/1.7.228/clojurescript-1.7.228.jar!/cljs/nodejscli.cljs to out/cljs/nodejscli.cljs
+... done. Elapsed 0.031044814 seconds

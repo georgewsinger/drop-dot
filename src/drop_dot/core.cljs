@@ -3,11 +3,22 @@
                             [clojure.string :as s]
 						                ;[cljs.test :refer-macros [deftest is testing run-tests]]
                             )
-  (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
+  (:require-macros [cljs.core.async.macros :refer [go go-loop]]
+                   [cljs-asynchronize.macros :as dm :refer [asynchronize]]
+))
 
 (node/enable-util-print!)
 
 (def pure-js (node/require "/home/george/Dropbox/drop-dot/js/get-lines-from-file.js"))
+
+#_(def fs (node/require "fs"))
+#_(asynchronize
+  (def f1 (.readFile fs "/home/george/Dropbox/briefcase/week1" "utf8" ...))
+  (def f2 (.readFile fs "/home/george/Dropbox/briefcase/week2" "utf8" ...))
+  (def f3 (.readFile fs "/home/george/Dropbox/briefcase/next_action" "utf8" ...))
+  (println f1)
+  (println f2)
+  (println f3));
 
 (defn jam-first-callback-arg-into-chan [c] 
   (fn [arg] (go (>! c arg))))
