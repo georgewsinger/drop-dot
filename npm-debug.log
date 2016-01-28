@@ -1,0 +1,116 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'edn-to-json' ]
+2 info using npm@3.3.12
+3 info using node@v5.0.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData edn-to-json
+8 silly fetchNamedPackageData edn-to-json
+9 silly mapToRegistry name edn-to-json
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/edn-to-json
+13 verbose request uri https://registry.npmjs.org/edn-to-json
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 8:46:38 AM
+16 verbose request using bearer token for auth
+17 verbose request id e8d39b98ab898626
+18 verbose etag "4DA72MR09JDZ4VXA5MT4UQ34"
+19 http request GET https://registry.npmjs.org/edn-to-json
+20 http 304 https://registry.npmjs.org/edn-to-json
+21 verbose headers { 'cache-control': 'max-age=300',
+21 verbose headers   'accept-ranges': 'bytes',
+21 verbose headers   date: 'Thu, 28 Jan 2016 13:46:38 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-jfk1039-JFK',
+21 verbose headers   'x-cache': 'MISS',
+21 verbose headers   'x-cache-hits': '0',
+21 verbose headers   'x-timer': 'S1453988798.802812,VS0,VE83' }
+22 silly get cb [ 304,
+22 silly get   { 'cache-control': 'max-age=300',
+22 silly get     'accept-ranges': 'bytes',
+22 silly get     date: 'Thu, 28 Jan 2016 13:46:38 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-jfk1039-JFK',
+22 silly get     'x-cache': 'MISS',
+22 silly get     'x-cache-hits': '0',
+22 silly get     'x-timer': 'S1453988798.802812,VS0,VE83' } ]
+23 verbose etag https://registry.npmjs.org/edn-to-json from cache
+24 verbose get saving edn-to-json to /home/george/.npm/registry.npmjs.org/edn-to-json/.cache.json
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule edn-to-json@0.0.6 checking installable status
+38 silly cache add args [ 'edn-to-json', null ]
+39 verbose cache add spec edn-to-json
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'edn-to-json',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'edn-to-json',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: '*',
+40 silly cache add   type: 'range' }
+41 silly addNamed edn-to-json@*
+42 verbose addNamed "*" is a valid semver range for edn-to-json
+43 silly addNameRange { name: 'edn-to-json', range: '*', hasData: false }
+44 silly mapToRegistry name edn-to-json
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/edn-to-json
+48 verbose addNameRange registry:https://registry.npmjs.org/edn-to-json not in flight; fetching
+49 verbose get https://registry.npmjs.org/edn-to-json not expired, no request
+50 silly addNameRange number 2 { name: 'edn-to-json', range: '*', hasData: true }
+51 silly addNameRange versions [ 'edn-to-json',
+51 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.5', '0.0.6' ] ]
+52 silly addNamed edn-to-json@0.0.6
+53 verbose addNamed "0.0.6" is a plain semver version for edn-to-json
+54 silly cache afterAdd edn-to-json@0.0.6
+55 verbose afterAdd /home/george/.npm/edn-to-json/0.0.6/package/package.json not in flight; writing
+56 verbose afterAdd /home/george/.npm/edn-to-json/0.0.6/package/package.json written
+57 silly loadAllDepsIntoIdealTree Finishing
+58 silly idealTree:prePrune lib
+58 silly idealTree:prePrune └── edn-to-json@0.0.6
+59 silly loadIdealTree Finishing
+60 silly currentTree lib
+61 silly idealTree lib
+61 silly idealTree └── edn-to-json@0.0.6
+62 silly generateActionsToTake Starting
+63 silly install generateActionsToTake
+64 warn checkPermissions Missing write access to /usr/lib/node_modules
+65 silly rollbackFailedOptional Starting
+66 silly rollbackFailedOptional Finishing
+67 silly runTopLevelLifecycles Starting
+68 silly runTopLevelLifecycles Finishing
+69 silly install printInstalled
+70 verbose stack Error: EACCES: permission denied, access '/usr/lib/node_modules'
+70 verbose stack     at Error (native)
+71 verbose cwd /home/george/Dropbox/drop-dot
+72 error Linux 4.2.5-1-ARCH
+73 error argv "/usr/bin/node" "/usr/bin/npm" "install" "-g" "edn-to-json"
+74 error node v5.0.0
+75 error npm  v3.3.12
+76 error path /usr/lib/node_modules
+77 error code EACCES
+78 error errno -13
+79 error syscall access
+80 error Error: EACCES: permission denied, access '/usr/lib/node_modules'
+80 error     at Error (native)
+80 error  { [Error: EACCES: permission denied, access '/usr/lib/node_modules']
+80 error   errno: -13,
+80 error   code: 'EACCES',
+80 error   syscall: 'access',
+80 error   path: '/usr/lib/node_modules' }
+81 error Please try running this command again as root/Administrator.
+82 verbose exit [ -13, true ]

@@ -8,21 +8,6 @@
 
 (def pure-js (node/require "../js/pure-js.js"))
 
-#_(def fs (node/require "fs"))
-#_(asynchronize
-  (def f1 (.readFile fs "/home/george/Dropbox/briefcase/week1" "utf8" ...))
-  (def f2 (.readFile fs "/home/george/Dropbox/briefcase/week2" "utf8" ...))
-  (def f3 (.readFile fs "/home/george/Dropbox/briefcase/next_action" "utf8" ...))
-  (println f1)
-  (println f2)
-  (println f3));
-
-#_(defn jam-first-callback-arg-into-chan [c] 
-  (fn [arg] (go (>! c arg))))
-
-#_(defn jam-second-callback-arg-into-chan [c] 
-  (fn [arg] (go (>! c arg))))
-
 (defn chan-vec-cmd->exec [input-chan] 
   (go-loop [v (<! input-chan)]
    (if (= (count v) 0)
