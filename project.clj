@@ -11,7 +11,18 @@
                  [org.clojure/core.async "0.2.374"]]
 
   :npm {:dependencies [[minimist "1.2.0"]
-                       [expand-home-dir "0.0.2"]]}
+                       [expand-home-dir "0.0.2"]]
+        
+        :package {:name "drop-dot"
+                        :version "0.0.1"
+                        :bin "index.js"
+                        :description "CLI utility to sync config files, dot files, and directories across UNIX machines using Dropbox."
+                        :main "index.js"
+                        :repository {:type "git" :url "git+https://github.com/georgewsinger/drop-dot.git"}
+                        :keywords ["dropbox" "sync" "config" "dot" "dotfile"]
+                        :author "George Singer"
+                        :license "MIT"
+                        :homepage "https://github.com/georgewsinger/drop-dot#readme"}}
 
   :plugins [[org.bodil/lein-noderepl "0.1.11"]
             [lein-cljsbuild           "1.1.2"]
